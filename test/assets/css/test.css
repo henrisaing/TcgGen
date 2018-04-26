@@ -1,0 +1,94 @@
+.card-back{
+  margin:20px;
+  display:block;
+  position: relative;
+  height:450px;
+  width: 300px;
+  /*background-color: blue;*/
+  padding:10px;
+  float:left;
+
+  border-radius: 15px;
+
+  text-align:center;
+
+  background-size:contain;
+  background-position:center center;
+  background-repeat: no-repeat;
+  background-image:url("../img/gw2back.png");
+  border:1px solid black;
+}
+
+.card-body{
+  margin:20px;
+  display:block;
+  position: relative;
+  height:450px;
+  width: 300px;
+  /*background-color: blue;*/
+  padding:10px;
+  float:left;
+
+  border-radius: 15px;
+
+  text-align:center;
+
+  background-image:url("../img/twintrees.jpg");
+}
+
+.card-tl{
+  position:relative;
+  display:inline-flex;
+  top:0;
+  float:left;
+
+  /*margin: 0 auto;*/
+  /*background-color:red;*/
+  /*width:100%;*/
+}
+.card-tm{
+  position:relative;
+  display:inline-flex;
+  margin:0 auto;
+}
+.card-tr{
+  position:relative;
+  display:inline-flex;
+  top:0;
+  float:right;
+}
+
+.card-pic{
+  display:block;
+  background-color: yellow;
+  height:45%;
+  margin:5%;
+}
+
+.card-cm{}
+
+.card-bl{
+  position:absolute;
+  display:inline-flex;
+  bottom:10px;
+  left:10px;
+}
+.card-bm{
+  /*UGLY*/
+  /*FIX LATER*/
+  position:absolute;
+  display:block;
+  /*display:inline-flex;*/
+  /*background-color:green;*/
+  bottom:10px;
+  width:90%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.card-br{
+  position:absolute;
+  display:inline-flex;
+  bottom:10px;
+  right:10px;
+}
