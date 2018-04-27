@@ -30,7 +30,6 @@
   float:left;
 
   border-radius: 15px;
-
   text-align:center;
 
   background-image:url("../img/twintrees.jpg");
@@ -58,17 +57,65 @@
   float:right;
 }
 
-.card-pic{
+.card-pic-wrapper{
+  position:relative;
   display:block;
-  background-color: yellow;
+  /*border:2px solid black;*/
+  /*background-color: yellow;*/
   height:45%;
   margin:5%;
+}
+
+.card-pic{
+  position:relative;
+  display:block;
+  /*border:2px solid black;*/
+  /*background-color: yellow;*/
+  /*height:45%;*/
+  /*margin:5%;*/
+  height: 100%;
+  width:100%;
+  overflow:hidden;
+  /*background-image:url("../img/ranger.jpg");
+  background-position:center center;
+  background-repeat: no-repeat;
+  background-size:99%;*/
+}
+
+.card-pic img{
+  /*position:absolute;*/
+  height:100%;
+  width:auto;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+.card-pic-caption{
+  position:absolute;
+  bottom:-5%;
+  left: 0;right: 0;
+  /*background-color:rgba(100,100,100,0.8);*/
+  background:linear-gradient(to right, rgba(0,0,0,0), rgba(255,255,255,0.8),rgba(255,255,255,0.8), rgba(0,0,0,0));
+  border-top:;
+}
+
+.card-pic-caption:before, .card-pic-caption:after {
+    content: "";
+    height: 1px;
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%,rgba(0,0,0,0) 100%);
+
+display: block;
 }
 
 .card-cm{}
 
 .card-bl{
   position:absolute;
+  /*display:table;*/
+  /*height:100%;*/
   display:inline-flex;
   bottom:10px;
   left:10px;
@@ -91,4 +138,37 @@
   display:inline-flex;
   bottom:10px;
   right:10px;
+}
+
+.text-border{
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.text-white{
+  color:white;
+}
+
+.icon-32{
+  height:32px;
+  width:auto;
+}
+
+.icon-64{
+  height:64px;
+  width:auto;
+}
+
+.icon-text-64{
+  /*left:50%;*/
+  /*text-align:center;*/
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  /*width:100%*/
+  /*height:100%;*/
+  line-height: 64px;
+}
+
+.table-cell{
+  display:table;
 }
