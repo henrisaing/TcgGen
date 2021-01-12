@@ -1,0 +1,48 @@
+.card{
+  position:relative;
+  display:inline-block;
+}
+.card-portrait{
+  height:3.5in;
+  width:2.5in;
+}
+.card-landscape{
+  height:2.5in;
+  width:3.5in;
+}
+
+.card-element{
+  position:absolute;
+  display:inline-block;
+}
+
+.card-pic{
+  display:block;
+  height:1.5in;
+  width:2in;
+  margin:0.3in auto;
+}
+
+.card-pic-full{
+  position:absolute;
+  display:block;
+  height:2.9in;
+  width:2in;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+
+.card-top{top:0;}
+.card-bottom{bottom:0;}
+.card-vertical-mid{top:50%; transform:translate(0,-50%);}
+.card-left{left:0;}
+.card-right{right:0;}
+.card-horizontal-mid{left:50%; transform:translate(-50%,0);}
+
+
+.card-background-red{background-color:red;}
+.card-background-blue{background-color:blue;}
+.card-background-yellow{background-color:yellow;}
+.card-border{border:10px solid black;}
