@@ -1,8 +1,4 @@
 $(document).ready(function(){
-  console.log('ready');
+  console.log('ready Card');
 
-  $(".card-element").click(function(){
-    var targetText = $(this).text();
-    console.log(targetText);
-  });
 });
