@@ -29,7 +29,15 @@ if(typeof hotswaptext == 'undefined'){var hotswaptext=".hotswaptext";}
     $(hotswaptext).each(function(){
       var target = $(this);
       if(target.find("input").length > 0){
-        $(target).html(target.find("input").val().trim());
+        // checks input str length
+        // sets target html to input value
+        // sets to blank space if empty
+        if(target.find("input").val().trim().length > 0){
+          $(target).html(target.find("input").val().trim());
+        }else{
+          $(target).html('&nbsp;');
+        }
+
       }
     });
   });

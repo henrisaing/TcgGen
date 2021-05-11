@@ -67,3 +67,5 @@ input{
 .card-background-blue{background-color:blue;}
 .card-background-yellow{background-color:yellow;}
 .card-border{border:10px solid black;}
+
+.hotswaptext{min-width:10px;}
