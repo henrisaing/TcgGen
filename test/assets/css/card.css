@@ -17,10 +17,15 @@
 }
 
 .card-pic{
+  position:absolute;
   display:block;
   height:1.5in;
   width:2in;
   margin:0.3in auto;
+  overflow: hidden;
+  top:50%;
+  left:50%;  
+  transform:translate(-50%, -115%);
 }
 
 .card-pic-full{
@@ -28,9 +33,22 @@
   display:block;
   height:2.9in;
   width:2in;
+  overflow: hidden;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
+}
+
+.card-pic img, .card-pic-full img{
+  display:block;
+  height:100%;
+  /*from https://stackoverflow.com/questions/14562457/center-oversized-image-in-div*/
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
 }
 
 input{
