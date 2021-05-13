@@ -15,7 +15,7 @@ if(typeof hotswaptext == 'undefined'){var hotswaptext=".hotswaptext";}
   $(hotswaptext).on("click",function(){
     var target = $(this);
     if(target.find("input").length == 0){
-      target.html("<input type='text' name='' value='"+target.text().trim()+"' width='"+target.text().length+"'>");
+      target.html("<input type='text' name='' value='"+target.html().trim()+"' width='"+target.html().length+"'>");
       $(hotswaptext+" input").focus();
     }
   });

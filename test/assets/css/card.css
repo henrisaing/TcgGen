@@ -17,7 +17,6 @@
   display:inline-block;
 }
 .card-background{
-  background-color:pink;
   width:100%;
   height:100%;
 }
@@ -59,18 +58,22 @@
 
 input{
   min-width:4px;
+  z-index:1000;
 }
 
 /*element positioning*/
 .card-top{top:0;}
 .card-bottom{bottom:0;}
 .card-vertical-mid{top:50%; transform:translate(0,-50%);}
+.card-vertical-lower{top:75%; transform:translate(0,-50%);}
+.card-vertical-upper{top:25%; transform:translate(0,-50%);}
 .card-left{left:0;}
 .card-right{right:0;}
 .card-horizontal-mid{left:50%; transform:translate(-50%,0);}
 
 
 /*background colors*/
+.card-background-pink{background-color:pink;}
 .card-background-red{background-color:red;}
 .card-background-blue{background-color:blue;}
 .card-background-yellow{background-color:yellow;}
