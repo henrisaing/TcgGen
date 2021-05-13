@@ -35,7 +35,7 @@ if(typeof hotswaptext == 'undefined'){var hotswaptext=".hotswaptext";}
         if(target.find("input").val().trim().length > 0){
           $(target).html(target.find("input").val().trim());
         }else{
-          $(target).html('&nbsp;');
+          $(target).html('&nbsp;&nbsp;&nbsp;');
         }
 
       }

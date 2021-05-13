@@ -1,6 +1,7 @@
 .card{
   position:relative;
   display:inline-block;
+  overflow:hidden;
 }
 .card-portrait{
   height:3.5in;
@@ -14,6 +15,11 @@
 .card-element{
   position:absolute;
   display:inline-block;
+}
+.card-background{
+  background-color:pink;
+  width:100%;
+  height:100%;
 }
 
 .card-pic{
@@ -39,7 +45,7 @@
   transform:translate(-50%, -50%);
 }
 
-.card-pic img, .card-pic-full img{
+.card-pic img, .card-pic-full img, .card-background img{
   display:block;
   height:100%;
   /*from https://stackoverflow.com/questions/14562457/center-oversized-image-in-div*/
@@ -55,6 +61,7 @@ input{
   min-width:4px;
 }
 
+/*element positioning*/
 .card-top{top:0;}
 .card-bottom{bottom:0;}
 .card-vertical-mid{top:50%; transform:translate(0,-50%);}
@@ -63,9 +70,20 @@ input{
 .card-horizontal-mid{left:50%; transform:translate(-50%,0);}
 
 
+/*background colors*/
 .card-background-red{background-color:red;}
 .card-background-blue{background-color:blue;}
 .card-background-yellow{background-color:yellow;}
-.card-border{border:10px solid black;}
+.card-background-transparent{background-color:rgba(100,100,100,0.3);}
 
-.hotswaptext{min-width:10px;}
+
+/*card border*/
+.card-border{border:10px solid black;}
+.card-border-radius10{border-radius:10px;}
+
+
+/*text*/
+.text-border{text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+.text-border-white{text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;}
+.text-white{color:white;}
+.text-black{color:black;}
