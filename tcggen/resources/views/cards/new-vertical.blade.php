@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="assets/css/card.css">
+  </head>
+
+  <body>
+  <!-- card 1 -->
+    <div class="card card-portrait card-background-red card-border card-border-radius10 text-white text-border">
+
+      <div class="card-element card-background card-background-pink hotswaptext"></div>
+
+      <div class="card-pic card-background-yellow hotswaptext"></div>
+      
+      <div class="card-element card-background-transparent 
+                  card-top card-left hotswaptext">
+        top left
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-top card-right hotswaptext">
+        top right
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-top card-horizontal-mid hotswaptext">
+        top mid
+      </div>
+      
+      <div class="card-element card-background-transparent 
+                  card-bottom card-left hotswaptext">
+        bot left
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-bottom card-right hotswaptext">
+        bot right
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-bottom card-horizontal-mid hotswaptext">
+        bot mid
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-vertical-mid card-horizontal-mid hotswaptext">
+        true mid
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-vertical-lower card-horizontal-mid hotswaptext">
+        lower mid
+      </div>
+
+    </div>
+<!-- card 2 -->
+<div class="card card-portrait card-background-red card-border text-border-white text-black">
+      <div class="card-element card-background hotswaptext"></div>
+
+      <div class="card-pic-full card-background-yellow hotswaptext"></div>
+      
+      <div class="card-element card-background-transparent 
+                  card-top card-left hotswaptext">
+        top left
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-top card-right hotswaptext">
+        top right
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-top card-horizontal-mid hotswaptext">
+        top mid
+      </div>
+      
+      <div class="card-element card-background-transparent 
+                  card-bottom card-left hotswaptext">
+        bot left
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-bottom card-right hotswaptext">
+        bot right
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-bottom card-horizontal-mid hotswaptext">
+        bot mid
+      </div>
+
+      <div class="card-element card-background-transparent 
+                  card-vertical-mid card-horizontal-mid hotswaptext">
+        true mid
+      </div>
+
+    </div>
+    
+    <div class="card-form">
+      
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript">var hotswaptext = ".hotswaptext";</script> -->
+    <script type="text/javascript" src="assets/js/card.js"></script>
+    <script type="text/javascript" src="assets/js/hotswaptext.js"></script>
+  </body>
+</html>

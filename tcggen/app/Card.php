@@ -22,6 +22,10 @@ class Card extends Model
     'midcenter',
     'midlower',
     'midupper',
+    'card-pic-upper',
+    'card-pic-full',
+    'card-background',
+    'card-border',
   ];
 
   public function set(){
