@@ -65,7 +65,7 @@ input{
 .card-top{top:0;}
 .card-bottom{bottom:0;}
 .card-vertical-mid{top:50%; transform:translate(0,-50%);}
-.card-vertical-lower{top:75%; transform:translate(0,-50%);}
+.card-vertical-lower{top:57%;display: flex;align-items:center;justify-content:center; width:80%; height:35%;}
 .card-vertical-upper{top:25%; transform:translate(0,-50%);}
 .card-left{left:0;}
 .card-right{right:0;}
