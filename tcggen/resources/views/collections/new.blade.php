@@ -1,19 +1,22 @@
 <!-- resources/views/collections/new.blade.php -->
-{!! Form::open(['url' => '/collections/create']) !!}
 
-name {!! Form::text('name', null, []) !!}
-<br>
-image {!! Form::textarea('image', null, ['rows'=>3]) !!}
-<br>
-description {!! Form::textarea('description', null, ['rows'=>3]) !!}
-<br>
-public {!! Form::select('public', [
-  'public' => 'public',
-  'private' => 'private',
-  'shareable' => 'shareable',
-], 'private') !!}
-<br>
-{!! Form::button('create collection'),[
-  'type' => 'submit'
-] !!}
-{!! Form::close() !!}
+<form action="/collection/store" method="post">
+{{ csrf_field() }}
+
+  name <input type="text" name="name">
+  <br>
+
+  image <textarea name="image" rows="3"></textarea>
+  <br>
+
+  description 
+  <textarea name="description" rows="3"></textarea>
+  <br>
+
+  <input type="radio" name="public" value="public" id="public"><label for="public">public</label>  <br>
+  <input type="radio" name="public" value="private" id="private" checked><label for="private">private</label>  <br>
+  <input type="radio" name="public" value="shareable" id="shareable"><label for="shareable">shareable</label> 
+
+  <br>
+  <input type="submit" name="submit" value='submit'>
+</form>

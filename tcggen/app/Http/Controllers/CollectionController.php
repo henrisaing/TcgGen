@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Collection;
+use App\Set;
+use Auth;
 
 class CollectionController extends Controller
 {
@@ -11,9 +14,8 @@ class CollectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        return view('collections.index');
     }
 
     /**
@@ -21,9 +23,8 @@ class CollectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function new(){
+        return view('collections.new');
     }
 
     /**
@@ -32,9 +33,11 @@ class CollectionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+      $collection = new Collection();
+      $collection->createCollection($request);
+
+      return redirect('/home');
     }
 
     /**
@@ -43,9 +46,13 @@ class CollectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(Collection $collection){
+      $sets = $collection->sets()->get();
+
+      return view('collections.show',[
+        'collection' => $collection,
+        'sets' => $sets,
+      ]);
     }
 
     /**
@@ -54,8 +61,7 @@ class CollectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id){
         //
     }
 
@@ -66,8 +72,7 @@ class CollectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
         //
     }
 
@@ -77,8 +82,7 @@ class CollectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id){
         //
     }
 }

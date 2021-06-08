@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Collection extends Model
 {
@@ -21,4 +22,17 @@ class Collection extends Model
   public function user(){
     return $this->belongsTo(User::class);
   }
+
+  public function createCollection($request){
+    $collection = Auth::user()->collections()->create([
+        'name' => $request->name,
+        'image' => $request->image,
+        'description' => $request->description,
+        'public' => $request->public,
+      ]);
+
+    return $collection;
+  }
+
+  
 }
