@@ -54,3 +54,8 @@ input{
   position:relative;
   z-index:2;
 }
+
+label.under{
+  font-weight:strong;
+  font-size:0.8em;
+}

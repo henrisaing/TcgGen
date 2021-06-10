@@ -34,6 +34,11 @@ class Card extends Model
   }
 
   public function createCard($set, $request){
+    $border = "black";
+    if (empty($request['card-border']) == false):
+        $border = $request['card-border'];
+    endif;
+
     $card = $set->cards()->create([
         'name' => $request->name,
         'description' => $request->description,
@@ -50,9 +55,9 @@ class Card extends Model
         'midlower' => $request->midlower,
         'midupper' => $request->name,
         'card-pic-upper' => $request['card-pic-upper'],
-        'card-pic-full' => null,
+        'card-pic-full' => $request['card-pic-full'],
         'card-background' => $request['card-background'],
-        'card-border' => 'black',
+        'card-border' => $border,
       ]);
 
     return $card;

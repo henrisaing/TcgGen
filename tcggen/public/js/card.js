@@ -20,12 +20,19 @@ function updateInputs(){
         //if sanitization is needed in frontend
         // $('#card-fields').append('<input type="text" name="'+element+'" value="'+$(this).html().toString().trim().replace(/</g,'&#60;').replace(/"/,'&quot;').replace(/\//g,'&#47;').replace(/>/g,'&gt;')+'">');
         $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).html().trim()+'">');
+
+        // converts [IMG]url into <img>
+        if ($(this).html().trim().search("[IMG]") != -1) {
+          $(this).html('<img src="'+$(this).html().trim().replace('[IMG]','')+'">');
+        }
       }
     }
   });
 
   setTimeout(function(){updateInputs()}, 1000);
 }
+
+
 
 // intercepts [enter], stops form submission, blurs input
 $(window).keydown(function(event){

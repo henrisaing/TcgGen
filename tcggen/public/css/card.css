@@ -80,7 +80,7 @@ input{
 .position-midleft{top:50%; transform:translate(0,-50%);left:0;}
 .position-midright{top:50%; transform:translate(0,-50%);right:0;}
 .position-midcenter{top:50%; transform:translate(0,-50%);left:50%; transform:translate(-50%,0); width:80%; text-align:center;}
-.position-midlower{top:57%;display: flex;align-items:center;justify-content:center; width:80%; height:35%;}
+.position-midlower{top:57%;display: flex;align-items:center;justify-content:center; width:80%; height:35%;left:50%; transform:translate(-50%,0);}
 .position-midupper{top:25%; transform:translate(0,-50%);left:50%; transform:translate(-50%,0);}
 
 
