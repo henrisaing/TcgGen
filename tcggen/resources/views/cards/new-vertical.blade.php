@@ -9,57 +9,57 @@
   
   <div class="card-element card-background-transparent 
               card-top card-left hotswaptext" element="topleft">
-    top left
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               card-top card-right hotswaptext" element="topright">
-    top right
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               card-top card-horizontal-mid hotswaptext" element="topmid">
-    top mid
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
   
   <div class="card-element card-background-transparent 
               card-bottom card-left hotswaptext" element="botleft">
-    bot left
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               card-bottom card-right hotswaptext" element="botright">
-    bot right
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               card-bottom card-horizontal-mid hotswaptext" element="botmid">
-    bot mid
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               position-midcenter hotswaptext" element="midcenter">
-    true mid
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               card-vertical-lower card-horizontal-mid hotswaptext" element="midlower">
-    lower mid
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               position-midleft hotswaptext" element="midleft">
-    mid left
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               position-midright hotswaptext" element="midright">
-    mid right
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
   <div class="card-element card-background-transparent 
               position-midupper hotswaptext" element="midupper">
-    mid upper
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </div>
 
 

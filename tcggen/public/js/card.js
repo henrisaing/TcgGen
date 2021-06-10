@@ -14,7 +14,7 @@ function updateInputs(){
       element = $(this).attr('element');
 
       if($(this).find("img").length > 0){
-        console.log('image detected')
+        // console.log('image detected')
         $('#card-fields').append('<input type="hidden" name="'+element+'" value="[IMG]'+$(this).find('img').attr('src')+'">');
       }else{
         //if sanitization is needed in frontend
