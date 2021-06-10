@@ -53,7 +53,7 @@ class Card extends Model
         'midright' => $request->midright,
         'midcenter' => $request->midcenter,
         'midlower' => $request->midlower,
-        'midupper' => $request->name,
+        'midupper' => $request->midupper,
         'card-pic-upper' => $request['card-pic-upper'],
         'card-pic-full' => $request['card-pic-full'],
         'card-background' => $request['card-background'],

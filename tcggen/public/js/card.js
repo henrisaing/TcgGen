@@ -13,8 +13,9 @@ function updateInputs(){
     if($(this).find("input").length == 0){
       element = $(this).attr('element');
 
+      // if an image is detected
+      // pass the img src as [IMG]src
       if($(this).find("img").length > 0){
-        // console.log('image detected')
         $('#card-fields').append('<input type="hidden" name="'+element+'" value="[IMG]'+$(this).find('img').attr('src')+'">');
       }else{
         //if sanitization is needed in frontend
@@ -22,7 +23,7 @@ function updateInputs(){
         $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).html().trim()+'">');
 
         // converts [IMG]url into <img>
-        if ($(this).html().trim().search("[IMG]") != -1) {
+        if ($(this).html().trim().includes("[IMG]")) {
           $(this).html('<img src="'+$(this).html().trim().replace('[IMG]','')+'">');
         }
       }

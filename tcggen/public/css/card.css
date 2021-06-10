@@ -102,3 +102,7 @@ input{
 .text-border-white{text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;}
 .text-white{color:white;}
 .text-black{color:black;}
+
+.card-pic:empty{
+  background-color:yellow;
+}

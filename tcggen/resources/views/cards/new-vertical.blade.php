@@ -5,7 +5,7 @@
 
   <div class="card-element card-background card-background-pink hotswaptext" element="card-background"></div>
 
-  <div class="card-pic card-background-yellow hotswaptext" element="card-pic-upper"></div>
+  <div class="card-pic hotswaptext" element="card-pic-upper"></div>
   
   <div class="card-element card-background-transparent 
               card-top card-left hotswaptext" element="topleft">
