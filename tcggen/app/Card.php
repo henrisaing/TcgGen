@@ -34,6 +34,9 @@ class Card extends Model
   }
 
   public function createCard($set, $request){
+    // initializes border as black 
+    // then sets border to user input 
+    // (failsafe incase user has no border)
     $border = "black";
     if (empty($request['card-border']) == false):
         $border = $request['card-border'];
@@ -62,4 +65,5 @@ class Card extends Model
 
     return $card;
   }
+
 }

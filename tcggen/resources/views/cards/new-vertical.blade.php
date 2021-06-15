@@ -3,7 +3,7 @@
 <!-- card 1 -->
 <div class="card card-portrait card-background-red  card-border card-border-radius10 text-white text-border" id="card">
 
-  <div class="card-element card-background card-background-pink hotswaptext" element="card-background"></div>
+  <div class="card-element card-background card-background-white hotswaptext" element="card-background"></div>
 
   <div class="card-pic hotswaptext" element="card-pic-upper"></div>
   

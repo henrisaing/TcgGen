@@ -40,3 +40,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/set/{set}/cards', 'CardController@index');
 Route::get('/set/{set}/new', 'CardController@newCard');
 Route::post('/set/{set}/store', 'CardController@storeCard');
+Route::get('/card/{card}', 'CardController@showCard');
+Route::get('/card/{card}/edit', 'CardController@editCard');
+Route::post('/card/{card}/update', 'CardController@updateCard');

@@ -1,28 +1,15 @@
 @extends('layouts.main')
-
 @section('content')
 <nav>
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a>>>
-  <?=$set->name?>
+  <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a>>>
+  <?=$card->name?>>>
+  <!-- AUTH CHECK FOR EDIT LINKS LATER -->
+  <a href="/card/<?=$card->id?>/edit">edit</a>
+  <!-- IMPORTANT -->
 </nav>
-<div class="container">
-  <?= $set->image; ?>
-  <br>
-  <?= $set->description; ?>
-  <br>
-  <?= $set->public; ?>
-  <i class="fab fa-apple"></i> 
-  <br>
-
-  <a href="/set/<?=$set->id?>/new" style="text-decoration:none;">
-    <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
-  </a>
-
-  <div id="card-box">
-  <?php foreach ($cards as $card): ?>
-    <a href="/card/<?=$card->id?>">
-    <!-- card -->
-    <div class="card card-portrait card-background-red card-border card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>">
+<!-- card 1 -->
+<div class="card card-portrait card-background-red card-border card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>">
 
       <div class="card-element card-background card-background-white" element="card-background">
         <?php if (preg_match("/[IMG]/i",$card['card-background'])): ?>
@@ -58,9 +45,11 @@
 
       <div class="card-element position-midupper" element="midupper"><?= $card['midupper']; ?></div>
     </div>
-    <!-- end card -->
-    </a>
-  <?php endforeach ?>
-  </div>
-</div>
+<!-- end card 1 -->
+<!-- scripts -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script type="text/javascript">var hotswaptext = ".hotswaptext";</script> -->
+    <!-- <script type="text/javascript" src="/js/card.js"></script> -->
+    <!-- <script type="text/javascript" src="assets/js/hotswaptext.js"></script> -->
+
 @stop

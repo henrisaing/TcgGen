@@ -8,6 +8,10 @@
   <link href="{{ asset('css/card.css') }}" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
   <!-- <link rel="stylesheet" href="/fonts/fontawesome-free-5.3.1-web/css/all.css"> -->
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="{{ asset('js/main.js') }}" defer></script>
+  <script src="{{ asset('js/hotswaptext.js') }}" defer></script>
 </head>
 <body>
 
@@ -24,9 +28,9 @@
   </div>
 
   <!-- Scripts -->
-  <script src="{{ asset('js/app.js') }}"></script>
-  <script src="{{ asset('js/main.js') }}"></script>
-  <script src="{{ asset('js/hotswaptext.js') }}"></script>
+  <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+  <!-- <script src="{{ asset('js/main.js') }}"></script> -->
+  <!-- <script src="{{ asset('js/hotswaptext.js') }}"></script> -->
   <script>
     window.Laravel = {!! json_encode([
       'csrfToken' => csrf_token(),
