@@ -7,6 +7,7 @@ use App\Card;
 use App\Set;
 use App\Collection;
 use Auth;
+use App\AuthCheck;
 
 class CardController extends Controller
 {
@@ -71,6 +72,25 @@ class CardController extends Controller
 
     $view = redirect('/card/'.$card->id);
 
+    return $view;
+  }
+
+  public function deleteCard(Card $card){
+    $set = $card->set()->first();
+    $collection = $set->collection()->first();
+
+    if(AuthCheck::collectPerms($collection)['owner']):
+      $card->delete();
+    endif;
+
+    $view = redirect('/collection/'.$collection->id.'/set/'.$set->id);
+
+    return $view;
+  }
+
+  public function deleteCardForm(Card $card){
+
+    $view = view('cards.delete', ['card'=>$card]);
     return $view;
   }
 }

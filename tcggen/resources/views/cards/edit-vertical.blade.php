@@ -89,9 +89,11 @@
     <div id="card-fields">
       
     </div>
-    <input type="submit" name="" value="submit">
-    <button onclick="updateInputs()">save card </button>
+    <input type="submit" name="" value="Save Changes">
+    <!-- <button onclick="updateInputs()">save card </button> -->
+    <button class="lb-link" func="/card/<?=$card->id?>/delete">Delete</button>
   </form>
+  
 </div>
 <!-- end card form -->
 

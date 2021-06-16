@@ -43,3 +43,5 @@ Route::post('/set/{set}/store', 'CardController@storeCard');
 Route::get('/card/{card}', 'CardController@showCard');
 Route::get('/card/{card}/edit', 'CardController@editCard');
 Route::post('/card/{card}/update', 'CardController@updateCard');
+Route::delete('/card/{card}/delete', 'CardController@deleteCard');
+Route::get('/card/{card}/delete', 'CardController@deleteCardForm');

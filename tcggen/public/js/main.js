@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', (event)=>{
     // sets to lightboxcontent
   lbLinks.forEach(button => {
     button.addEventListener('click', event=>{
+      event.preventDefault();
       openLightbox(button.getAttribute('func'));
-      
     });
     
   });
