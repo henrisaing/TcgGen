@@ -14,6 +14,9 @@
     <?=$set->image?>|
     <?=$set->description?>|
     <?=$set->public?>|
+    <?php if ($auth['owner']): ?>
+      <button class="lb-link" func="/set/<?=$set->id?>/delete">delete</button>
+    <?php endif ?>
   <?php endforeach; ?>
 </div>
 

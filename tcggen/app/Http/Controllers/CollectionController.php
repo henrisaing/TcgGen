@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Collection;
 use App\Set;
+use App\AuthCheck;
 use Auth;
 
 class CollectionController extends Controller
@@ -48,10 +49,12 @@ class CollectionController extends Controller
      */
     public function show(Collection $collection){
       $sets = $collection->sets()->get();
+      $auth = AuthCheck::collectPerms($collection);
 
       return view('collections.show',[
         'collection' => $collection,
         'sets' => $sets,
+        'auth' => $auth,
       ]);
     }
 

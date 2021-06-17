@@ -10,14 +10,14 @@
   </div>
 
   <div class="card-pic hotswaptext" element="card-pic-upper">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['card-pic-upper'])): ?>
       <?= $template['template']['card-pic-upper']; ?>
     <?php endif ?>
   </div>
   
   <div class="card-element card-background-transparent 
               card-top card-left hotswaptext" element="topleft">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['topleft'])): ?>
       <?= $template['template']['topleft']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -26,7 +26,7 @@
 
   <div class="card-element card-background-transparent 
               card-top card-right hotswaptext" element="topright">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['topright'])): ?>
       <?= $template['template']['topright']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -35,7 +35,7 @@
 
   <div class="card-element card-background-transparent 
               card-top card-horizontal-mid hotswaptext" element="topmid">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['topmid'])): ?>
       <?= $template['template']['topmid']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -44,7 +44,7 @@
   
   <div class="card-element card-background-transparent 
               card-bottom card-left hotswaptext" element="botleft">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['botleft'])): ?>
       <?= $template['template']['botleft']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -53,7 +53,7 @@
 
   <div class="card-element card-background-transparent 
               card-bottom card-right hotswaptext" element="botright">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['botright'])): ?>
       <?= $template['template']['botright']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -62,7 +62,7 @@
 
   <div class="card-element card-background-transparent 
               card-bottom card-horizontal-mid hotswaptext" element="botmid">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['botmid'])): ?>
       <?= $template['template']['botmid']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -71,7 +71,7 @@
 
   <div class="card-element card-background-transparent 
               position-midcenter hotswaptext" element="midcenter">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['midcenter'])): ?>
       <?= $template['template']['midcenter']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -80,7 +80,7 @@
 
   <div class="card-element card-background-transparent 
               card-vertical-lower card-horizontal-mid hotswaptext" element="midlower">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['midlower'])): ?>
       <?= $template['template']['midlower']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -89,7 +89,7 @@
 
   <div class="card-element card-background-transparent 
               position-midleft hotswaptext" element="midleft">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['midleft'])): ?>
       <?= $template['template']['midleft']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -98,7 +98,7 @@
 
   <div class="card-element card-background-transparent 
               position-midright hotswaptext" element="midright">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['midright'])): ?>
       <?= $template['template']['midright']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -107,7 +107,7 @@
 
   <div class="card-element card-background-transparent 
               position-midupper hotswaptext" element="midupper">
-    <?php if ($template['hasTemplate']): ?>
+    <?php if ($template['hasTemplate'] && !empty($template['template']['midupper'])): ?>
       <?= $template['template']['midupper']; ?>
     <?php else: ?>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

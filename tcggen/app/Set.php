@@ -36,6 +36,21 @@ class Set extends Model
       'name' => '[TEMPLATE]',
       'public' => 'private',
       'card-border' => 'black',
+      'description' => '',
+      'topleft' => '&nbsp;&nbsp;&nbsp;',
+      'topright' => '&nbsp;&nbsp;&nbsp;',
+      'topmid' => '&nbsp;&nbsp;&nbsp;',
+      'botleft' => '&nbsp;&nbsp;&nbsp;',
+      'botright' => '&nbsp;&nbsp;&nbsp;',
+      'botmid' => '&nbsp;&nbsp;&nbsp;',
+      'midleft' => '&nbsp;&nbsp;&nbsp;',
+      'midright' => '&nbsp;&nbsp;&nbsp;',
+      'midcenter' => '&nbsp;&nbsp;&nbsp;',
+      'midlower' => '&nbsp;&nbsp;&nbsp;',
+      'midupper' => '&nbsp;&nbsp;&nbsp;',
+      'card-pic-upper' => '',
+      'card-pic-full' => '',
+      'card-background' => '',
     ]);
 
     return $set;

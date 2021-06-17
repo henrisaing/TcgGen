@@ -31,9 +31,13 @@ Route::post('/collection/{collection}/set/store','SetController@storeSet');
 Route::get('/collection/{collection}/set/{set}','SetController@show');
 Route::get('/set/{set}/edit','SetController@edit');
 Route::post('/set/{set}/update','SetController@update');
-Route::delete('/set/{set}/delete','SetController@delete');
+Route::delete('/set/{set}/delete','SetController@deleteSet');
+Route::get('/set/{set}/delete', 'SetController@deleteSetForm');
+
+// auth routes
 Auth::routes();
 
+// home route
 Route::get('/home', 'HomeController@index')->name('home');
 
 // card routes
