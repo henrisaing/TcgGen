@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
+<nav>
+  <a href="/home">home</a> >>
+  <?=$collection->name?>
+</nav>
+
 <div class="container">
   <?php print($collection->name) ?>
   <?php print($collection->image) ?>

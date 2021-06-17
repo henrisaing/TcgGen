@@ -21,7 +21,8 @@ Route::get('/collection/{collection}/edit','CollectionController@edit');
 Route::post('/collection/{collection}/update','CollectionController@update');
 Route::get('/collection/new','CollectionController@new');
 Route::post('/collection/store','CollectionController@store');
-Route::delete('/collection/{collection}/delete','CollectionController@delete');
+Route::delete('/collection/{collection}/delete','CollectionController@deleteCollection');
+Route::get('/collection/{collection}/delete','CollectionController@deleteCollectionForm');
 Route::get('/collection/{collection}','CollectionController@show');
 
 // sets routes

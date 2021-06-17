@@ -21,6 +21,7 @@ class CardController extends Controller
     return view('cards.new-vertical', [
       'set' => $set,
       'template' => $template,
+      'collection' => $set->collection()->first(),
     ]);
   }
 

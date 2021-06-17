@@ -40,7 +40,14 @@ class SetController extends Controller
   }
 
   public function deleteSetForm(Set $set){
-    $view = view('sets.delete', ['set'=>$set]);
+    $collection = $set->collection()->first();
+
+    if(AuthCheck::collectPerms($collection)['owner']):
+      $view = view('sets.delete', ['set'=>$set]);
+    else:
+      $view = 'permission denied';
+    endif;
+    
     return $view;
   }
 

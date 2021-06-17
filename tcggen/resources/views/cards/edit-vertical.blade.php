@@ -1,9 +1,10 @@
 @extends('layouts.main')
 @section('content')
 <nav>
-  <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a>>>
-  <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a>>>
-  <?=$card->name?>>>
+  <a href="/home">home</a> >>
+  <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
+  <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a> >>
+  <?=$card->name?> >>
   <!-- AUTH CHECK FOR EDIT LINKS LATER -->
   <strong>edit</strong>
   <!-- IMPORTANT -->

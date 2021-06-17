@@ -2,9 +2,11 @@
 
 @section('content')
 <nav>
-  <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a>>>
+  <a href="/home">home</a> >>
+  <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
   <?=$set->name?>
 </nav>
+
 <div class="container">
   <?= $set->image; ?>
   <br>
