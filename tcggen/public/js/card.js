@@ -20,7 +20,7 @@ function updateInputs(){
       }else{
         //if sanitization is needed in frontend
         // $('#card-fields').append('<input type="text" name="'+element+'" value="'+$(this).html().toString().trim().replace(/</g,'&#60;').replace(/"/,'&quot;').replace(/\//g,'&#47;').replace(/>/g,'&gt;')+'">');
-        $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).html().trim()+'">');
+        $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).html().trim().replace(/\"/g,'&quot;')+'">');
 
         // converts [IMG]url into <img>
         if ($(this).html().trim().includes("[IMG]")) {
