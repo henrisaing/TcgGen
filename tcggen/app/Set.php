@@ -32,8 +32,15 @@ class Set extends Model
         'description' => $request->description,
         'public' => $request->public,
       ]);
+    $set->cards()->create([
+      'name' => '[TEMPLATE]',
+      'public' => 'private',
+      'card-border' => 'black',
+    ]);
+
     return $set;
   }
+
 
   public function template(){
     $cards = $this->cards()->get();
