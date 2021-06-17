@@ -14,13 +14,16 @@ class Set extends Model
     'public',
   ];
 
+
   public function cards(){
     return $this->hasMany(Card::class);
   }
 
+
   public function collection(){
     return $this->belongsTo(Collection::class);
   }
+
 
   public function createSet($collection, $request){
     $set = $collection->sets()->create([
@@ -30,5 +33,19 @@ class Set extends Model
         'public' => $request->public,
       ]);
     return $set;
+  }
+
+  public function template(){
+    $cards = $this->cards()->get();
+    $template = ["hasTemplate" => false, "template" => null];
+
+    foreach ($cards as $card):
+      if($card->name == "[TEMPLATE]"):
+        $template['hasTemplate'] = true;
+        $template['template'] = $card;
+      endif;
+    endforeach;
+
+    return $template;
   }
 }

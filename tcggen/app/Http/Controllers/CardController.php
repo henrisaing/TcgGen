@@ -17,7 +17,11 @@ class CardController extends Controller
   }
 
   public function newCard(Set $set){
-    return view('cards.new-vertical', ['set'=>$set]);
+    $template = $set->template();
+    return view('cards.new-vertical', [
+      'set' => $set,
+      'template' => $template,
+    ]);
   }
 
   public function storeCard(Set $set, Request $request){

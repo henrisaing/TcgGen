@@ -18,8 +18,16 @@
     <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
   </a>
 
+  <?php if ($template['hasTemplate']): ?>
+      <a href="/card/<?=$template['template']->id?>">
+        <button>Template</button>
+      </a>
+  <?php endif ?>
+
   <div id="card-box">
   <?php foreach ($cards as $card): ?>
+    <?php if ($card->name != "[TEMPLATE]"): ?>
+
     <a href="/card/<?=$card->id?>">
     <!-- card -->
     <div class="card card-portrait card-background-red card-border card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>">
@@ -60,7 +68,8 @@
     </div>
     <!-- end card -->
     </a>
-  <?php endforeach ?>
+    <?php endif; ?>
+  <?php endforeach; ?>
   </div>
 </div>
 @stop

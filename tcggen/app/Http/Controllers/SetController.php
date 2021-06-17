@@ -28,11 +28,13 @@ class SetController extends Controller
 
   public function show(Collection $collection, Set $set){
     $cards = $set->cards()->get();
+    $template = $set->template();
 
     return view('sets.show', [
       'collection' => $collection, 
       'set' => $set,
       'cards' => $cards,
+      'template' => $template,
     ]);
   }
 }

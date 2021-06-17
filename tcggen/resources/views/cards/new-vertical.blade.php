@@ -3,63 +3,115 @@
 <!-- card 1 -->
 <div class="card card-portrait card-background-red  card-border card-border-radius10 text-white text-border" id="card">
 
-  <div class="card-element card-background card-background-white hotswaptext" element="card-background"></div>
+  <div class="card-element card-background card-background-white hotswaptext" element="card-background">
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['card-background']; ?>
+    <?php endif ?>
+  </div>
 
-  <div class="card-pic hotswaptext" element="card-pic-upper"></div>
+  <div class="card-pic hotswaptext" element="card-pic-upper">
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['card-pic-upper']; ?>
+    <?php endif ?>
+  </div>
   
   <div class="card-element card-background-transparent 
               card-top card-left hotswaptext" element="topleft">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['topleft']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               card-top card-right hotswaptext" element="topright">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['topright']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               card-top card-horizontal-mid hotswaptext" element="topmid">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['topmid']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
   
   <div class="card-element card-background-transparent 
               card-bottom card-left hotswaptext" element="botleft">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['botleft']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               card-bottom card-right hotswaptext" element="botright">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['botright']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               card-bottom card-horizontal-mid hotswaptext" element="botmid">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['botmid']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               position-midcenter hotswaptext" element="midcenter">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['midcenter']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               card-vertical-lower card-horizontal-mid hotswaptext" element="midlower">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['midlower']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               position-midleft hotswaptext" element="midleft">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['midleft']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               position-midright hotswaptext" element="midright">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['midright']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
   <div class="card-element card-background-transparent 
               position-midupper hotswaptext" element="midupper">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php if ($template['hasTemplate']): ?>
+      <?= $template['template']['midupper']; ?>
+    <?php else: ?>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <?php endif?>
   </div>
 
 
@@ -71,24 +123,50 @@
   <form id='card-form' method="post" action="/set/<?=$set->id?>/store">
   {{ csrf_field() }}
     <label for="name" class="under">
-      <input type="text" name="name" id="name"><br>
-      name
+      <input type="text" name="name" id="name">
+      <br> name
     </label>
     <br> <br>
     <label class="under">
-      <textarea name="description"></textarea>
+      <textarea name="description">
+        <?php if ($template['hasTemplate']): ?>
+          <?= $template['template']['description']; ?>
+        <?php endif; ?>
+      </textarea>
       <br> description
      </label>
     <br><br>
     <label class="under">
-      <input type="text" name="card-border" value="black" id="card-border">
+      <?php if ($template['hasTemplate']): ?>
+        <input type="text" name="card-border" value="<?= $template['template']['card-border']; ?>" id="card-border">
+      <?php else: ?>
+        <input type="text" name="card-border" value="black" id="card-border">
+      <?php endif?>
       <br> border color
     </label>
 
     <br><br>
-    <input type="radio" name="public" value="public" id="public"><label for="public">public</label><br>
-    <input type="radio" name="public" value="private" id="private" checked><label for="private">private</label>  <br>
-    <input type="radio" name="public" value="shareable" id="shareable"><label for="shareable">shareable</label> 
+    <input type="radio" name="public" value="public" id="public"><label for="public"
+      <?php if ($template['hasTemplate'] && $template['template']['public'] == 'public'): ?>
+          checked
+      <?php endif; ?>
+    >public</label><br>
+
+    <input type="radio" name="public" value="private" id="private" 
+      <?php if ($template['hasTemplate']):?>
+        <?php if ($template['template']['public'] == 'private'): ?>
+          checked
+        <?php endif; ?>
+      <?php else:?>
+        checked
+      <?php endif; ?> 
+
+    ><label for="private">private</label>  <br>
+    <input type="radio" name="public" value="shareable" id="shareable"
+      <?php if ($template['hasTemplate'] && $template['template']['public'] == 'shareable'): ?>
+          checked
+      <?php endif; ?>
+    ><label for="shareable">shareable</label> 
     <br>
     <br>
     <div id="card-fields">
@@ -106,8 +184,10 @@
     <script type="text/javascript" src="/js/card.js"></script>
     <!-- <script type="text/javascript" src="assets/js/hotswaptext.js"></script> -->
     <script type="text/javascript">
-      $('#card-border').on('change',function(){
-        $('#card').css('border-color', $(this)[0].value);
+      $(document).ready(function(){
+        $('#card-border').on('change',function(){
+          $('#card').css('border-color', $(this)[0].value);
+        }).change();
       });
     </script>
 
