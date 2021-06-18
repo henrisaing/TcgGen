@@ -17,15 +17,17 @@
   <?= $set->public; ?>
   <i class="fab fa-apple"></i> 
   <br>
+  
+  <?php if ($auth['owner']): ?>
+    <a href="/set/<?=$set->id?>/new" style="text-decoration:none;">
+      <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
+    </a>
 
-  <a href="/set/<?=$set->id?>/new" style="text-decoration:none;">
-    <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
-  </a>
-
-  <?php if ($template['hasTemplate']): ?>
-      <a href="/card/<?=$template['template']->id?>">
-        <button>Template</button>
-      </a>
+    <?php if ($template['hasTemplate']): ?>
+        <a href="/card/<?=$template['template']->id?>">
+          <button>Template</button>
+        </a>
+    <?php endif ?>
   <?php endif ?>
 
   <div id="card-box">
