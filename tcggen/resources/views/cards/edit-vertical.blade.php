@@ -4,7 +4,7 @@
   <a href="/home">home</a> >>
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
   <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a> >>
-  <?=$card->name?> >>
+  <a href="/card/<?=$card->id?>"><?=$card->name?></a> >>
   <!-- AUTH CHECK FOR EDIT LINKS LATER -->
   <strong>edit</strong>
   <!-- IMPORTANT -->

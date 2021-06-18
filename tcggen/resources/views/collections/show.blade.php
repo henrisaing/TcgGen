@@ -14,15 +14,17 @@
   <br>
   <button class="lb-link" func="/collection/<?=$collection->id?>/set/new">new set</button>
   <?php foreach ($sets as $set): ?>
-    <br>
-    <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a>|
-    <?=$set->image?>|
-    <?=$set->description?>|
-    <?=$set->public?>|
-    <?php if ($auth['owner']): ?>
-      <button class="lb-link" func="/set/<?=$set->id?>/delete">delete</button>
-    <?php endif ?>
+    <?php if ($auth['owner'] || $set['public'] == 'public'): ?>
+      <br>
+      <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a>|
+      <?=$set->image?>|
+      <?=$set->description?>|
+      <?=$set->public?>|
+      <?php if ($auth['owner']): ?>
+        <button class="lb-link" func="/set/<?=$set->id?>/edit">edit</button>
+        <button class="lb-link" func="/set/<?=$set->id?>/delete">delete</button>
+      <?php endif ?>
+    <?php endif; ?>
   <?php endforeach; ?>
 </div>
-
 @stop

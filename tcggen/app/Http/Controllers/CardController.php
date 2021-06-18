@@ -34,46 +34,41 @@ class CardController extends Controller
   }
 
   public function showCard(Card $card){
-
-    $view = view('cards.show-vertical', [
-      'card'=>$card,
-      'set'=>$card->set()->first(),
-      'collection'=>$card->set()->first()->collection()->first(),
-    ]);
+    $collection = $card->set()->first()->collection()->first();
+    $auth = AuthCheck::collectPerms($collection);
+    
+    if($auth['owner'] || $card->public == 'public' || $card->public == 'shareable'):
+      $view = view('cards.show-vertical', [
+        'card' => $card,
+        'set' => $card->set()->first(),
+        'collection' => $collection,
+        'auth' => $auth,
+      ]);
+    else:
+      $view = 'You do not have permissions to view this card.';
+    endif;
 
     return $view;
   }
 
   public function editCard(Card $card){
-    $view = view('cards.edit-vertical', [
-      'card'=>$card,
-      'set'=>$card->set()->first(),
-      'collection'=>$card->set()->first()->collection()->first(),
-    ]);
+    $collection = $card->set()->first()->collection()->first();
+
+    if(AuthCheck::collectPerms($collection)['owner']):
+      $view = view('cards.edit-vertical', [
+        'card'=>$card,
+        'set'=>$card->set()->first(),
+        'collection'=>$card->set()->first()->collection()->first(),
+      ]);
+    else:
+      $view = redirect('/card/'.$card->id);
+    endif;
+
     return $view;
   }
 
   public function updateCard(Card $card, Request $request){
-    $card->update([
-        'name' => $request->name,
-        'description' => $request->description,
-        'public' => $request->public,
-        'topleft' => $request->topleft,
-        'topright' => $request->topright,
-        'topmid' => $request->topmid,
-        'botleft' => $request->botleft,
-        'botright' => $request->botright,
-        'botmid' => $request->botmid,
-        'midleft' => $request->midleft,
-        'midright' => $request->midright,
-        'midcenter' => $request->midcenter,
-        'midlower' => $request->midlower,
-        'midupper' => $request->midupper,
-        'card-pic-upper' => $request['card-pic-upper'],
-        'card-pic-full' => $request['card-pic-full'],
-        'card-background' => $request['card-background'],
-        'card-border' => $request['card-border'],
-      ]);
+    $card->updateCard($request);
 
     $view = redirect('/card/'.$card->id);
 
@@ -94,8 +89,14 @@ class CardController extends Controller
   }
 
   public function deleteCardForm(Card $card){
+    $collection = $card->set()->first()->collection()->first();
 
-    $view = view('cards.delete', ['card'=>$card]);
+    if(AuthCheck::collectPerms($collection)['owner']):
+      $view = view('cards.delete', ['card'=>$card]);
+    else:
+      $view = "Sorry, you dont have permission to delete ".$card->name;
+    endif;
+
     return $view;
   }
 }

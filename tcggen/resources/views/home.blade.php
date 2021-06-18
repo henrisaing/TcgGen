@@ -29,6 +29,8 @@
             |<?php print($collection['image']); ?>
             |<?php print($collection['description']); ?>
             |<?php print($collection['public']); ?>
+            
+            <button class="lb-link" func="/collection/<?=$collection->id?>/edit">edit</button>
             <button class="lb-link" func="/collection/<?=$collection->id?>/delete">delete</button>
             <br>
         <?php endforeach; ?>

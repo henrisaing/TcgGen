@@ -27,11 +27,13 @@ class SetController extends Controller
       return redirect('/collection/'.$collection->id);
   }
 
-  public function show(Collection $collection, Set $set){
+  public function showSet(Collection $collection, Set $set){
     $cards = $set->cards()->get();
     $template = $set->template();
+    $auth = AuthCheck::collectPerms($collection);
 
     return view('sets.show', [
+      'auth' => $auth,
       'collection' => $collection, 
       'set' => $set,
       'cards' => $cards,
@@ -60,6 +62,37 @@ class SetController extends Controller
     endif;
 
     $view = redirect('/collection/'.$collection->id);
+
+    return $view;
+  }
+
+
+  public function editSet(Set $set){
+    $collection = $set->collection()->first();
+
+    if(AuthCheck::collectPerms($collection)['owner']):
+      // $set->updateSet($request);
+      $view = view('sets.edit', [
+        'set' => $set,
+      ]);
+    else:
+      $view = 'no permission to edit set.';
+    endif;
+
+
+    return $view;
+  }
+
+
+  public function updateSet(Set $set, Request $request){
+    $collection = $set->collection()->first();
+
+    if(AuthCheck::collectPerms($collection)['owner']):
+      $set->updateSet($request);
+      $view = redirect('/collection/'.$collection->id);
+    else:
+      $view = 'no permission to edit set.';
+    endif;
 
     return $view;
   }

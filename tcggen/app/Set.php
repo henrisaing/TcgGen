@@ -70,4 +70,17 @@ class Set extends Model
 
     return $template;
   }
+
+  public function updateSet($request){
+    $set = $this;
+
+    $set->update([
+      'name' => $request->name,
+      'image' => $request->image,
+      'description' => $request->description,
+      'public' => $request->public,
+    ]);
+
+    return $set;
+  }
 }

@@ -51,11 +51,17 @@ class CollectionController extends Controller
     $sets = $collection->sets()->get();
     $auth = AuthCheck::collectPerms($collection);
 
-    return view('collections.show',[
-      'collection' => $collection,
-      'sets' => $sets,
-      'auth' => $auth,
-    ]);
+    if ($auth['owner'] || $auth['type'] == 'public' || $auth['type'] == 'shareable'):
+      $view = view('collections.show',[
+        'collection' => $collection,
+        'sets' => $sets,
+        'auth' => $auth,
+      ]);
+    else:
+      $view = 'You do not have permission to view this collection.';
+    endif;
+
+    return $view;
   }
 
   /**
@@ -64,8 +70,14 @@ class CollectionController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit($id){
-      //
+  public function editCollection(Collection $collection){
+    $auth = AuthCheck::collectPerms($collection);
+    $view = view('collections.edit', [
+      'collection' => $collection,
+      'auth' => $auth,
+    ]);
+
+    return $view;
   }
 
   /**
@@ -75,8 +87,15 @@ class CollectionController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, $id){
-      //
+  public function updateCollection(Collection $collection, Request $request){
+    if (AuthCheck::collectPerms($collection)['owner']):
+      $collection->updateCollection($request);
+      $view = redirect('/home');
+    else:
+      $view = 'You do not have permission to update this collection.';
+    endif;
+
+    return $view;
   }
 
   /**

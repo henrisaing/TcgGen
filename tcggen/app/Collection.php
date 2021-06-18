@@ -34,5 +34,16 @@ class Collection extends Model
     return $collection;
   }
 
-  
+  public function updateCollection($request){
+    $collection = $this;
+
+    $collection->update([
+      'name' => $request->name,
+      'image' => $request->image,
+      'description' => $request->description,
+      'public' => $request->public,
+    ]);
+
+    return $collection;
+  }
 }

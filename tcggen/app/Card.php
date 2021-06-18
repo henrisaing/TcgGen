@@ -66,4 +66,29 @@ class Card extends Model
     return $card;
   }
 
+  public function updateCard($request){
+    $card = $this->update([
+        'name' => $request->name,
+        'description' => $request->description,
+        'public' => $request->public,
+        'topleft' => $request->topleft,
+        'topright' => $request->topright,
+        'topmid' => $request->topmid,
+        'botleft' => $request->botleft,
+        'botright' => $request->botright,
+        'botmid' => $request->botmid,
+        'midleft' => $request->midleft,
+        'midright' => $request->midright,
+        'midcenter' => $request->midcenter,
+        'midlower' => $request->midlower,
+        'midupper' => $request->midupper,
+        'card-pic-upper' => $request['card-pic-upper'],
+        'card-pic-full' => $request['card-pic-full'],
+        'card-background' => $request['card-background'],
+        'card-border' => $request['card-border'],
+      ]);
+
+    return $card;
+  }
+
 }

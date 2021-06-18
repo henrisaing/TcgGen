@@ -4,10 +4,11 @@
   <a href="/home">home</a> >>
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
   <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a> >>
-  <?=$card->name?> >>
-  <!-- AUTH CHECK FOR EDIT LINKS LATER -->
-  <a href="/card/<?=$card->id?>/edit">edit</a>
-  <!-- IMPORTANT -->
+  <?=$card->name?> 
+  <?php if ($auth['owner']): ?>
+  >>
+    <a href="/card/<?=$card->id?>/edit">edit</a>
+  <?php endif ?>
 </nav>
 <!-- card 1 -->
 <div class="card card-portrait card-background-red card-border card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>">

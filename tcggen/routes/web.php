@@ -17,8 +17,8 @@ Route::get('/', function () {
 
 // collection routes
 Route::get('/collections', 'CollectionController@index');
-Route::get('/collection/{collection}/edit','CollectionController@edit');
-Route::post('/collection/{collection}/update','CollectionController@update');
+Route::get('/collection/{collection}/edit','CollectionController@editCollection');
+Route::post('/collection/{collection}/update','CollectionController@updateCollection');
 Route::get('/collection/new','CollectionController@new');
 Route::post('/collection/store','CollectionController@store');
 Route::delete('/collection/{collection}/delete','CollectionController@deleteCollection');
@@ -29,9 +29,9 @@ Route::get('/collection/{collection}','CollectionController@show');
 Route::get('/sets', 'SetController@index');
 Route::get('/collection/{collection}/set/new','SetController@newSet');
 Route::post('/collection/{collection}/set/store','SetController@storeSet');
-Route::get('/collection/{collection}/set/{set}','SetController@show');
-Route::get('/set/{set}/edit','SetController@edit');
-Route::post('/set/{set}/update','SetController@update');
+Route::get('/collection/{collection}/set/{set}','SetController@showSet');
+Route::get('/set/{set}/edit','SetController@editSet');
+Route::post('/set/{set}/update','SetController@updateSet');
 Route::delete('/set/{set}/delete','SetController@deleteSet');
 Route::get('/set/{set}/delete', 'SetController@deleteSetForm');
 

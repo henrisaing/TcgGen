@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
+<?php if ($auth['owner'] || $set->public == 'public' || $set->public == 'shareable'): ?>
+  
 <nav>
   <a href="/home">home</a> >>
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
@@ -29,6 +31,7 @@
   <div id="card-box">
   <?php foreach ($cards as $card): ?>
     <?php if ($card->name != "[TEMPLATE]"): ?>
+    <?php if ($auth['owner'] || $card->public == 'public'): ?>
 
     <a href="/card/<?=$card->id?>">
     <!-- card -->
@@ -70,8 +73,13 @@
     </div>
     <!-- end card -->
     </a>
+  <?php endif; ?>
     <?php endif; ?>
   <?php endforeach; ?>
   </div>
 </div>
+
+<?php else: ?>
+  You do not have permission to view this set.
+<?php endif; ?>
 @stop
