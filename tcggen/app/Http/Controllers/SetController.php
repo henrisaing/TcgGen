@@ -17,14 +17,22 @@ class SetController extends Controller
   }
 
   public function newSet(Collection $collection){
-    return view('sets.new',['collection'=>$collection]);
+    if (AuthCheck::collectPerms($collection)['owner']) :
+      $view = view('sets.new',['collection'=>$collection]);
+    else:
+      $view = 'You do not have permission to create a set in this collection.';
+    endif;
+
+    return $view;
   }
 
   public function storeSet(Collection $collection,Request $request){
-    $set = new Set();
-    $set->createSet($collection, $request);
+    if (AuthCheck::collectPerms($collection)['owner']) :
+      $set = new Set();
+      $set->createSet($collection, $request);
+    endif;
 
-      return redirect('/collection/'.$collection->id);
+    return redirect('/collection/'.$collection->id);
   }
 
   public function showSet(Collection $collection, Set $set){
