@@ -153,11 +153,11 @@
     </label>
 
     <br><br>
-    <input type="radio" name="public" value="public" id="public"><label for="public"
-      <?php if ($template['hasTemplate'] && $template['template']['public'] == 'public'): ?>
+    <input type="radio" name="public" value="public" id="public"
+    <?php if ($template['hasTemplate'] && $template['template']['public'] == 'public'): ?>
           checked
       <?php endif; ?>
-    >public</label><br>
+    ><label for="public">public</label><br>
 
     <input type="radio" name="public" value="private" id="private" 
       <?php if ($template['hasTemplate']):?>
