@@ -3,10 +3,14 @@
 <head>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>TCG Gen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Styles -->
   <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+
   <link href="{{ asset('css/card.css') }}" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="/fonts/fontawesome-free-5.3.1-web/css/all.css"> -->
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>

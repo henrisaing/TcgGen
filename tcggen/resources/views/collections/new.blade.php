@@ -3,15 +3,17 @@
 <form action="/collection/store" method="post">
 {{ csrf_field() }}
 
-  name <input type="text" name="name">
+  <label class="under">name</label><br>
+  <input type="text" name="name">
   <br>
 
-  image <textarea name="image" rows="3"></textarea>
+  <label class="under">image</label><br>
+  <textarea name="image" rows="3"></textarea>
   <br>
 
-  description 
+  <label class="under">description</label><br>
   <textarea name="description" rows="3"></textarea>
-  <br>
+  <br><br>
 
   <input type="radio" name="public" value="public" id="public"><label for="public">public</label>  <br>
   <input type="radio" name="public" value="private" id="private" checked><label for="private">private</label>  <br>

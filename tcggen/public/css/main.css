@@ -50,6 +50,10 @@ right:0;
 
 input[type=submit] , button{
   cursor: pointer;
+  background-color:none;
+  background:none;
+  border-radius:5px;
+  border:1px solid black;
 }
 
 input{
@@ -77,4 +81,46 @@ nav .right-side{
    float: right;
    position:absolute;
    right:0;
+}
+
+body{
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+}
+
+h2{
+  font-weight: 400;
+  border-bottom:1px solid black;
+}
+
+input[type=submit]:hover , button:hover{
+  background-color:rgb(220,220,220);
+}
+
+input[type=radio]{
+  cursor:pointer;
+}
+
+.container{
+  display:block;
+  width:90%;
+  margin:auto;
+  background-color:rgb(200,200,220);
+  position:absolute;
+  left:50%;  
+  transform:translate(-50%,0);
+}
+
+@media screen and (max-width: 800px){
+  .container{
+    width:100%;
+  }
+
+  input[type=text], input[type=submit], button{
+    width:100%;
+  }
+}
+
+a{
+  text-decoration: none;
 }

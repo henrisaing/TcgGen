@@ -2,10 +2,12 @@
   position:relative;
   display:inline-block;
   overflow:hidden;
+  font-family: serif;
 }
 .card-portrait{
   height:3.5in;
   width:2.5in;
+  box-sizing: border-box;
 }
 .card-landscape{
   height:2.5in;
@@ -106,8 +108,4 @@ input{
 
 .card-pic:empty{
   background-color:yellow;
-}
-
-a div.card{
-  text-decoration:none;
 }

@@ -8,21 +8,14 @@
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
   <?=$set->name?>
 </nav>
-
-<div class="container">
-  <?= $set->image; ?>
-  <br>
-  <?= $set->description; ?>
-  <br>
-  <?= $set->public; ?>
-  <i class="fab fa-apple"></i> 
+  IMG <?= $set->image; ?> | DESC <?= $set->description; ?> | PUB <?= $set->public; ?>
   <br>
   
   <?php if ($auth['owner']): ?>
     <a href="/set/<?=$set->id?>/new" style="text-decoration:none;">
       <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
     </a>
-
+<br>
     <?php if ($template['hasTemplate']): ?>
         <a href="/card/<?=$template['template']->id?>">
           <button>Template</button>
@@ -78,7 +71,6 @@
   <?php endif; ?>
     <?php endif; ?>
   <?php endforeach; ?>
-  </div>
 </div>
 
 <?php else: ?>
