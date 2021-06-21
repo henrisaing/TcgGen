@@ -14,9 +14,20 @@
   <script src="{{ asset('js/hotswaptext.js') }}" defer></script>
 </head>
 <body>
-
-  @yield('content')
-
+<div class="container">
+  <nav class="right-side">
+    @guest
+    <a href="{{route('login')}}">Login</a>
+    <a href="{{route('register')}}">Register</a>
+    @else
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      {{ csrf_field() }}
+    </form>
+    @endguest
+  </nav>
+    @yield('content')
+</div>
   <!-- lightbox popup -->
   <div id="dark-box">
     <div id="light-box">

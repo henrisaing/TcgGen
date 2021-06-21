@@ -67,3 +67,14 @@ nav{
   margin: 0;
   padding: 0;
 }
+
+nav .right-side{
+  float:right;
+}
+
+.container{float:left;}
+.container nav.right-side{
+   float: right;
+   position:absolute;
+   right:0;
+}

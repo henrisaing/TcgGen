@@ -19,7 +19,6 @@
             </div>
         </div>
     </div> -->
-    Welcome <?= $user->name ?>
     <h2> Collections</h2>
     <div>
         <button class="lb-link" func="/collection/new">new collection</button>
