@@ -11,8 +11,10 @@
   <?php print($collection->image) ?>
   <?php print($collection->description) ?>
   <?php print($collection->public) ?>
+  <?php if ($auth['owner']): ?>
   <br>
-  <button class="lb-link" func="/collection/<?=$collection->id?>/set/new">new set</button>
+    <button class="lb-link" func="/collection/<?=$collection->id?>/set/new">new set</button>
+  <?php endif ?>
   <?php foreach ($sets as $set): ?>
     <?php if ($auth['owner'] || $set['public'] == 'public'): ?>
       <br>
