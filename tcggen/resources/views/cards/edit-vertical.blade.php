@@ -8,9 +8,9 @@
   <h2>Edit</h2>
 </nav>
 <!-- card -->
-<div class="card card-portrait card-background-red card-border card-border-radius10 text-white text-border" id="card" style="border-color:<?=$card['card-border']?>">
+<div class="card card-portrait card-border card-background-white card-border-radius10 text-white text-border" id="card" style="border-color:<?=$card['card-border']?>">
 
-      <div class="card-element card-background card-background-white hotswaptext" element="card-background">
+      <div class="card-element card-background hotswaptext" element="card-background">
         <?php if (preg_match("/[IMG]/i",$card['card-background'])): ?>
           <img src="<?= str_replace('[IMG]', '', $card['card-background'])?>">
         <?php endif; ?>

@@ -1,3 +1,6 @@
+/*LIGHTBOX STUFF*/
+/*
+*/
 #dark-box{
   position:absolute;
   width:100%;
@@ -47,7 +50,13 @@ position:absolute;
 top:0;
 right:0;
 }
+/*END LIGHTBOX STUFF*/
+/*
+*/
 
+/*INPUTS*/
+/*
+*/
 input[type=submit] , button{
   cursor: pointer;
   background-color:none;
@@ -56,16 +65,23 @@ input[type=submit] , button{
   border:1px solid black;
 }
 
-input{
-  position:relative;
-  z-index:2;
+input, textarea{position:relative;z-index:2;background-color:white;border:1px solid black;}
+
+input[type=submit]:hover , button:hover{
+  background-color:rgb(220,220,220);
 }
 
-label.under{
-  font-weight:strong;
-  font-size:0.8em;
-}
+input[type=radio]{cursor:pointer;text-align:left;float:left;}
 
+label.under{font-weight:strong;font-size:0.8em;float:left;}
+/*END INPUTS*/
+/*
+*/
+
+
+/*NAV*/
+/*
+*/
 nav{
   list-style-type: none;
   margin: 0;
@@ -83,7 +99,13 @@ nav .right-side{
    position:absolute;
    right:0;
 }
+/*END NAV*/
+/*
+*/
 
+/*GENERAL*/
+/*
+*/
 body{
   font-family: "Roboto Slab", serif;
   font-weight: 300;
@@ -95,14 +117,6 @@ h2{
   text-align:center;
 }
 
-input[type=submit]:hover , button:hover{
-  background-color:rgb(220,220,220);
-}
-
-input[type=radio]{
-  cursor:pointer;
-}
-
 .container{
   display:block;
   width:90%;
@@ -112,7 +126,12 @@ input[type=radio]{
   transform:translate(-50%,0);
   text-align:center;
 }
+/*END GENERAL*/
+/*
+*/
 
+
+/*screen and low resolution*/
 @media screen and (max-width: 800px){
   .container{
     width:100%;

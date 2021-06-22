@@ -30,7 +30,7 @@
 
     <a href="/card/<?=$card->id?>">
     <!-- card -->
-    <div class="card card-portrait card-border card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>">
+    <div class="card card-portrait card-border card-background-white card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>">
 
       <div class="card-element card-background card-background-white" element="card-background">
         <?php if (preg_match("/[IMG]/i",$card['card-background'])): ?>
