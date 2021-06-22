@@ -12,10 +12,15 @@
 <?php print($collection->image) ?>
 <?php print($collection->description) ?>
 <?php print($collection->public) ?>
-<?php if ($auth['owner']): ?>
+
 <br>
+
+<?php if ($auth['owner']): ?>
   <button class="lb-link" func="/collection/<?=$collection->id?>/set/new">new set</button>
 <?php endif ?>
+
+<br>
+
 <?php foreach ($sets as $set): ?>
   <?php if ($auth['owner'] || $set['public'] == 'public'): ?>
     <br>
@@ -27,6 +32,7 @@
       <button class="lb-link" func="/set/<?=$set->id?>/edit">edit</button>
       <button class="lb-link" func="/set/<?=$set->id?>/delete">delete</button>
     <?php endif ?>
+    <br>
   <?php endif; ?>
 <?php endforeach; ?>
 @stop

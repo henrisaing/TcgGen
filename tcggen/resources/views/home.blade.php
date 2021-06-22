@@ -5,8 +5,10 @@
     home >> 
     <h2> Collections</h2>
 </nav>
-<div>
     <button class="lb-link" func="/collection/new">new collection</button>
+
+    <br>
+    
     <?php foreach($collections as $collection): ?>
         <br>
         <a href="/collection/{{$collection->id}}"><?php print($collection['name']); ?></a>
@@ -18,5 +20,4 @@
         <button class="lb-link" func="/collection/<?=$collection->id?>/delete">delete</button>
         <br>
     <?php endforeach; ?>
-</div>
 @endsection

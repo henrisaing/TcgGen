@@ -20,9 +20,12 @@
     <?php if ($template['hasTemplate']): ?>
         <a href="/card/<?=$template['template']->id?>">
           <button>Template</button>
-        </a>
+        </a><br>
     <?php endif ?>
   <?php endif ?>
+
+  <br>
+
   <div id="card-box">
   <?php foreach ($cards as $card): ?>
     <?php if ($card->name != "[TEMPLATE]"): ?>

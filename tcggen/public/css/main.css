@@ -37,6 +37,7 @@
   margin:20px;
   /*border-radius:20px;*/
   /*border:5px solid black;*/
+  padding:0.125in;
 }
 
 #lb-save{
@@ -54,7 +55,7 @@ right:0;
 /*
 */
 
-/*INPUTS*/
+/*INPUTS and LABELS*/
 /*
 */
 input[type=submit] , button{
@@ -72,9 +73,16 @@ input[type=submit]:hover , button:hover{
 }
 
 input[type=radio]{cursor:pointer;text-align:left;float:left;}
+label{display:inline-block;text-align:left;float:left;}
+label.under, label.over{display:block;font-weight:strong;font-size:0.8em;text-align:left;}
 
-label.under{font-weight:strong;font-size:0.8em;float:left;}
-/*END INPUTS*/
+form#card-form input[type=text], form#card-form textarea{
+  width:2.5in;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*END INPUTS and LABELS*/
 /*
 */
 
@@ -103,6 +111,16 @@ nav .right-side{
 /*
 */
 
+/*BORDERS*/
+/*
+*/
+.border-1px-black{
+  border:1px solid black;
+}
+/*END BORDERS*/
+/*
+*/
+
 /*GENERAL*/
 /*
 */
@@ -126,12 +144,35 @@ h2{
   transform:translate(-50%,0);
   text-align:center;
 }
+.full-container{
+  display:block;
+  width:90%;
+  margin:auto;
+  position:absolute;
+  text-align:center;
+  height:90%;
+}
 /*END GENERAL*/
 /*
 */
 
 
+/*MISC*/
+/*
+*/
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*END MISC*/
+/*
+*/
+
 /*screen and low resolution*/
+/*
+*/
 @media screen and (max-width: 800px){
   .container{
     width:100%;

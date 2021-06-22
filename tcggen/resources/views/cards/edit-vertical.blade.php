@@ -50,28 +50,40 @@
 <div class="card card-portrait">
   <form id='card-form' method="post" action="/card/<?=$card->id?>/update">
   {{ csrf_field() }}
+    <!-- NAME INPUT -->
     <label for="name" class="under">
-      <input type="text" name="name" id="name" value="<?=$card['name']?>"><br>
-      name
+      <input type="text" name="name" id="name" value="<?=$card['name']?>">
+      <br>name
     </label>
-    <br> <br>
+    <!-- END NAME INPUT -->
+
+    <br> <br> <br>
+
+    <!-- DESCRIPTION INPUT -->
     <label class="under">
       <textarea name="description"><?=$card['description']?></textarea>
       <br> description
      </label>
-    <br><br>
+    <!-- END DECRIPTION INPUT -->
+
+    <br><br><br><br>
+
+    <!-- BORDER COLOR INPUT -->
     <label class="under">
       <input type="text" name="card-border" value="<?=$card['card-border']?>" id="card-border">
       <br> border color
     </label>
+    <!-- END BORDER COLOR INPUT -->
 
-    <br><br>
+    <br><br><br>
+
+    <!-- radio buttons for public -->
     <input type="radio" name="public" value="public" id="public"
     <?php if ($card['public'] == 'public'): ?>
       checked
     <?php endif ?>
-    ><label for="public">public</label><br>
-
+    ><label for="public">public</label>
+    <br>
     <input type="radio" name="public" value="private" id="private"
     <?php if ($card['public'] == 'private'): ?>
       checked
@@ -83,8 +95,10 @@
       checked
     <?php endif ?>
     ><label for="shareable">shareable</label> 
-    <br>
-    <br>
+    <!-- end public radio -->
+
+    <br><br>
+
     <div id="card-fields">
       
     </div>
