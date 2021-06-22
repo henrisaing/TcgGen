@@ -4,7 +4,7 @@
   <a href="/home">home</a> >>
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
   <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a> >>
-  New Card
+  <h2>New Card</h2>
 </nav>
 
 <!-- card 1 -->
@@ -129,11 +129,16 @@
 <div class="card card-portrait">
   <form id='card-form' method="post" action="/set/<?=$set->id?>/store">
   {{ csrf_field() }}
+    <!-- name input -->
     <label for="name" class="under">
       <input type="text" name="name" id="name">
       <br> name
     </label>
-    <br> <br>
+    <!-- end name input -->
+
+    <br> <br> <br>
+
+    <!-- description input -->
     <label class="under">
       <textarea name="description">
         <?php if ($template['hasTemplate']): ?>
@@ -142,7 +147,11 @@
       </textarea>
       <br> description
      </label>
-    <br><br>
+     <!-- end description -->
+
+    <br><br><br><br>
+
+    <!-- border color input -->
     <label class="under">
       <?php if ($template['hasTemplate']): ?>
         <input type="text" name="card-border" value="<?= $template['template']['card-border']; ?>" id="card-border">
@@ -151,8 +160,11 @@
       <?php endif?>
       <br> border color
     </label>
+    <!-- end border color -->
 
-    <br><br>
+    <br><br><br>
+
+    <!-- radio buttons for public -->
     <input type="radio" name="public" value="public" id="public"
     <?php if ($template['hasTemplate'] && $template['template']['public'] == 'public'): ?>
           checked
@@ -174,8 +186,10 @@
           checked
       <?php endif; ?>
     ><label for="shareable">shareable</label> 
-    <br>
-    <br>
+    <!-- end public radio buttons -->
+
+    <br><br>
+    
     <div id="card-fields">
       
     </div>

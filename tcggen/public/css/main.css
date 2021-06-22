@@ -72,7 +72,12 @@ input[type=submit]:hover , button:hover{
   background-color:rgb(220,220,220);
 }
 
-input[type=radio]{cursor:pointer;text-align:left;float:left;}
+input[type=radio]{
+  cursor:pointer;
+  text-align:left;
+  float:left;
+  border:1px solid black;
+}
 label{display:inline-block;text-align:left;float:left;}
 label.under, label.over{display:block;font-weight:strong;font-size:0.8em;text-align:left;}
 
