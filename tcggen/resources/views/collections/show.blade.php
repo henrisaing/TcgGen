@@ -3,7 +3,9 @@
 @section('content')
 <nav>
   <a href="/home">home</a> >>
+  <h2>  
   <?=$collection->name?>
+  </h2>
 </nav>
 
 <?php print($collection->name) ?>

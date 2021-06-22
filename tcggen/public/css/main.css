@@ -70,6 +70,7 @@ nav{
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align:left;
 }
 
 nav .right-side{
@@ -91,6 +92,7 @@ body{
 h2{
   font-weight: 400;
   border-bottom:1px solid black;
+  text-align:center;
 }
 
 input[type=submit]:hover , button:hover{
@@ -108,6 +110,7 @@ input[type=radio]{
   position:absolute;
   left:50%;  
   transform:translate(-50%,0);
+  text-align:center;
 }
 
 @media screen and (max-width: 800px){

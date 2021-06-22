@@ -4,11 +4,12 @@
   <a href="/home">home</a> >>
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
   <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a> >>
-  <?=$card->name?> 
+  <?=$card->name?>
   <?php if ($auth['owner']): ?>
-  >>
+    >>
     <a href="/card/<?=$card->id?>/edit">edit</a>
   <?php endif ?>
+  <h2><?=$card->name?></h2>
 </nav>
 <!-- card 1 -->
 <div class="card card-portrait card-background-red card-border card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>">

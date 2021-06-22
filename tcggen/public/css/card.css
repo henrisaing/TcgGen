@@ -8,6 +8,8 @@
   height:3.5in;
   width:2.5in;
   box-sizing: border-box;
+  display:inline-block;
+  margin:auto;
 }
 .card-landscape{
   height:2.5in;
@@ -16,7 +18,6 @@
 
 .card-element{
   position:absolute;
-  display:inline-block;
 }
 .card-background{
   width:100%;

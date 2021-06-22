@@ -6,7 +6,9 @@
 <nav>
   <a href="/home">home</a> >>
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
-  <?=$set->name?>
+  <h2>    
+    <?=$set->name?>
+  </h2>
 </nav>
   IMG <?= $set->image; ?> | DESC <?= $set->description; ?> | PUB <?= $set->public; ?>
   <br>
@@ -15,14 +17,12 @@
     <a href="/set/<?=$set->id?>/new" style="text-decoration:none;">
       <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
     </a>
-<br>
     <?php if ($template['hasTemplate']): ?>
         <a href="/card/<?=$template['template']->id?>">
           <button>Template</button>
         </a>
     <?php endif ?>
   <?php endif ?>
-
   <div id="card-box">
   <?php foreach ($cards as $card): ?>
     <?php if ($card->name != "[TEMPLATE]"): ?>

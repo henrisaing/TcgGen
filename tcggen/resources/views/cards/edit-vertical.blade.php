@@ -5,9 +5,7 @@
   <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
   <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a> >>
   <a href="/card/<?=$card->id?>"><?=$card->name?></a> >>
-  <!-- AUTH CHECK FOR EDIT LINKS LATER -->
-  <strong>edit</strong>
-  <!-- IMPORTANT -->
+  <h2>Edit</h2>
 </nav>
 <!-- card -->
 <div class="card card-portrait card-background-red card-border card-border-radius10 text-white text-border" id="card" style="border-color:<?=$card['card-border']?>">
