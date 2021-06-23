@@ -100,18 +100,17 @@ nav{
   margin: 0;
   padding: 0;
   text-align:left;
+  display:block;
 }
 
-nav .right-side{
+nav.right-side{
   float:right;
+  display:inline-block;
+  width:auto;
 }
 
 .container{float:left;}
-.container nav.right-side{
-   float: right;
-   position:absolute;
-   right:0;
-}
+
 /*END NAV*/
 /*
 */

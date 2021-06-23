@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Collection;
 use Auth;
+use Session;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $user = Auth::user();
         $collections = $user->collections()->get();
         

@@ -24,7 +24,7 @@
     <?php endif ?>
   <?php endif ?>
 
-  <br>
+  <br><br>
 
   <div id="card-box">
   <?php foreach ($cards as $card): ?>

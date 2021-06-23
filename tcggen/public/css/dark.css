@@ -1,0 +1,32 @@
+body{
+  background-color:black;
+}
+
+.container{
+  color:white;
+}
+
+input[type=submit] , button{
+  cursor: pointer;
+  background-color:none;
+  background:none;
+  border-radius:5px;
+  border:1px solid white;
+  color:white;
+}
+
+a{
+  color:rgb(200,150,200);
+}
+
+h2{
+  border-bottom: 1px solid white;
+}
+
+input, textarea{
+  position:relative;
+  z-index:2;
+  background-color:black;
+  border:1px solid white;
+  color:white;
+}
