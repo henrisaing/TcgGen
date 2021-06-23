@@ -1,5 +1,5 @@
 <!-- resources/views/collections/new.blade.php -->
-
+<div id="popup-form">
 <form action="/collection/store" method="post">
 {{ csrf_field() }}
 
@@ -22,3 +22,4 @@
   <br>
   <input type="submit" name="submit" value='submit'>
 </form>
+</div>

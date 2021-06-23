@@ -1,4 +1,5 @@
 <!-- resource view: sets.new -->
+<div id="popup-form">
 <form action="/set/<?=$set->id?>/update" method="post">
 {{ csrf_field() }}
 
@@ -30,3 +31,4 @@
   <br>
   <input type="submit" value="Update Set">
 </form>
+</div>

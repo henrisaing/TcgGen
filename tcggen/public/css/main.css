@@ -55,6 +55,28 @@ right:0;
 /*
 */
 
+/*popup form*/
+/*
+*/
+#popup-form{
+  width:2.5in;
+  height:3in;
+  box-sizing: border-box;
+  color:black;
+  background-color:white;
+}
+
+#popup-form input[type=submit], #popup-form input[type=text],#popup-form textarea, #popup-form button{
+    color:black;
+    background-color:white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    width:100%;
+  }
+/*end popupform*/
+/*
+*/
+
 /*INPUTS and LABELS*/
 /*
 */

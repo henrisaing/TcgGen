@@ -1,5 +1,6 @@
 <!-- resources/views/collections/edit.blade.php -->
 <!-- view requires $auth && $collection -->
+<div id="popup-form">
 <?php if ($auth['owner']): ?>
   <!-- MVOE AUTH TO CONTROLLER? -->
 <form action="/collection/<?=$collection->id?>/update" method="post">
@@ -39,5 +40,8 @@
 </form>
 
 <?php else: ?>
-  You do not have permission to edit this collection.
+  <p>
+    You do not have permission to edit this collection.
+  </p>
 <?php endif ?>
+</div>

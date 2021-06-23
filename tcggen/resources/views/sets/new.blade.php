@@ -1,5 +1,6 @@
 <!-- resource view: sets.new -->
-<form action="/collection/<?=$collection->id?>/set/store" method="post">
+<div id="popup-form">
+<form id="popup-form" action="/collection/<?=$collection->id?>/set/store" method="post">
 {{ csrf_field() }}
 
   name <input type="text" name="name"> <br>
@@ -15,3 +16,4 @@
   <br>
   <input type="submit" value="Create Set">
 </form>
+</div>

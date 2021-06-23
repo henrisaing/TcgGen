@@ -1,3 +1,4 @@
+<div id="popup-form">
 <form action="/set/<?=$set->id?>/delete" method="post">
   {{csrf_field()}}
   {{method_field('delete')}}
@@ -5,3 +6,4 @@
   <br><br>
   <button type="submit">DELETE</button>
 </form>
+</div>
