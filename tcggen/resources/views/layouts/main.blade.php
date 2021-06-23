@@ -44,7 +44,7 @@
           <!-- <a href="/session" onclick="event.preventDefault(); document.getElementById('theme').submit();">Light Mode</a> -->
         <?php endif; ?> 
       <?php else: ?>
-        <input type="text" name="session_theme" readonly hidden value='light'>
+        <input type="text" name="session_theme" readonly hidden value='dark'>
         <!-- <a href="/session" onclick="event.preventDefault(); document.getElementById('theme').submit();">Light Mode</a> -->
       <?php endif ?>
     </form>
