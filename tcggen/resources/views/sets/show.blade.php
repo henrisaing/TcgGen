@@ -38,12 +38,16 @@
       <div class="card-element card-background card-background-white" element="card-background">
         <?php if (preg_match("/[IMG]/i",$card['card-background'])): ?>
           <img src="<?= str_replace('[IMG]', '', $card['card-background'])?>">
+        <?php else: ?>
+          <?= $card['card-background']; ?>
         <?php endif; ?>
       </div>
 
       <div class="card-pic" element="card-pic-upper">
         <?php if (preg_match("/[IMG]/i",$card['card-pic-upper'])): ?>
           <img src="<?= str_replace('[IMG]', '', $card['card-pic-upper'])?>">
+        <?php else: ?>
+          <?= $card['card-pic-upper']; ?>
         <?php endif; ?>
       </div>
       

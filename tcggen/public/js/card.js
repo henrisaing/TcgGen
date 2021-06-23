@@ -10,7 +10,7 @@ function updateInputs(){
 
   $('.hotswaptext').each(function(){
     // if card element isnt an input currently
-    if($(this).find("input").length == 0){
+    if($(this).find("textarea").length == 0){
       element = $(this).attr('element');
 
       // if an image is detected
@@ -20,7 +20,7 @@ function updateInputs(){
       }else{
         //if sanitization is needed in frontend
         // $('#card-fields').append('<input type="text" name="'+element+'" value="'+$(this).html().toString().trim().replace(/</g,'&#60;').replace(/"/,'&quot;').replace(/\//g,'&#47;').replace(/>/g,'&gt;')+'">');
-        $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).html().trim().replace(/\"/g,'&quot;')+'">');
+        $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).html().trim().replace(/\"/g,'&quot;').replace(/\</g,'&#60;').replace(/\>/g,'&gt;')+'">');
 
         // converts [IMG]url into <img>
         if ($(this).html().trim().includes("[IMG]")) {
