@@ -33,21 +33,20 @@
   <!-- right side nav -->
   <nav class="right-side">
 
+  <!-- dark mode form -->
     <form id="theme" action="/session" method="post">
       {{ csrf_field() }}
       <?php if (Session::get('theme') !== null): ?>
         <?php if (Session::get('theme') == 'dark'): ?>
           <input type="text" name="session_theme" readonly hidden value='light'>
-          <!-- <a href="/session" onclick="event.preventDefault(); document.getElementById('theme').submit();">Dark Mode</a> -->
         <?php else: ?>
           <input type="text" name="session_theme" readonly hidden value='dark'>
-          <!-- <a href="/session" onclick="event.preventDefault(); document.getElementById('theme').submit();">Light Mode</a> -->
         <?php endif; ?> 
       <?php else: ?>
         <input type="text" name="session_theme" readonly hidden value='dark'>
-        <!-- <a href="/session" onclick="event.preventDefault(); document.getElementById('theme').submit();">Light Mode</a> -->
       <?php endif ?>
     </form>
+
     <!-- dark/light mode switch outside form to stay inline with logout/register/login -->
     <?php if (Session::get('theme') !== null): ?>
         <?php if (Session::get('theme') == 'dark'): ?>
