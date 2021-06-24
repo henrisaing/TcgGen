@@ -44,7 +44,7 @@
 
       <div class="card-element position-midcenter" element="midcenter"><?= $card['midcenter']; ?></div>
 
-      <div class="card-element position-midlower" element="midlower"><?= $card['midlower']; ?></div>
+      <div class="card-element position-midlower card-background-transparent-dark" element="midlower"><?= $card['midlower']; ?></div>
 
       <div class="card-element position-midleft" element="midleft"><?= $card['midleft']; ?></div>
 

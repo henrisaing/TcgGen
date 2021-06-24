@@ -40,7 +40,7 @@
 
       <div class="card-element position-midcenter hotswaptext card-background-transparent" element="midcenter"><?= $card['midcenter']; ?></div>
 
-      <div class="card-element position-midlower hotswaptext card-background-transparent" element="midlower"><?= $card['midlower']; ?></div>
+      <div class="card-element position-midlower hotswaptext card-background-transparent-dark" element="midlower"><?= $card['midlower']; ?></div>
 
       <div class="card-element position-midleft hotswaptext card-background-transparent" element="midleft"><?= $card['midleft']; ?></div>
 
