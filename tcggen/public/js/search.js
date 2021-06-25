@@ -9,7 +9,7 @@ search.addEventListener('input', (event) => {
   if(search.value != ""){
     cards.forEach(function(card){
       console.log(nodeToString(card))
-      if (nodeToString(card).search(new RegExp(search.value, 'i')) == -1){
+      if (nodeToString(card).replace(/\(|\)/g, '').search(new RegExp(search.value.replace(/\(|\)/g, ''), 'i')) == -1){
         card.style.display = 'none';
       }
     });
