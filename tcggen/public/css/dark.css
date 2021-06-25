@@ -20,7 +20,7 @@ a{
 }
 
 h2{
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid white;
 }
 
 input, textarea{
@@ -33,4 +33,9 @@ input, textarea{
 
 input[type=submit]:hover , button:hover{
   background-color:rgb(80,80,80);
+}
+
+input#search{
+  border-bottom:1px solid white;
+  color:white;
 }

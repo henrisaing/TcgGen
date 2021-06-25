@@ -112,6 +112,29 @@ form#card-form input[type=text], form#card-form textarea{
 /*
 */
 
+/*SEARCH BOX*/
+/*
+*/
+input#search{
+  display: inline-block;
+  /*float:left;*/
+  margin-top:0px;
+  position:relative;
+  background-color:rgba(0,0,0,0);
+  border:none;
+  text-align:center;
+  width:100%;
+  border-bottom:1px solid black;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-size:1em;
+}
+input#search:focus{outline-width:0;}
+
+/*END SEARCH*/
+/*
+*/
+
 
 /*NAV*/
 /*
@@ -156,7 +179,7 @@ body{
 
 h2{
   font-weight: 400;
-  border-bottom:1px solid black;
+  border-bottom:2px solid black;
   text-align:center;
 }
 

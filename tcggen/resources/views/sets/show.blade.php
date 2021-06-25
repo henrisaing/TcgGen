@@ -9,6 +9,7 @@
   <h2>    
     <?=$set->name?>
   </h2>
+  <input id="search" type="text" placeholder="Search">
 </nav>
   IMG <?= $set->image; ?> | DESC <?= $set->description; ?> | PUB <?= $set->public; ?>
   <br>
@@ -146,6 +147,7 @@
   <?php endforeach; ?>
 </div>
 
+<script src="{{ asset('js/search.js') }}"></script>
 <?php else: ?>
   You do not have permission to view this set.
 <?php endif; ?>
