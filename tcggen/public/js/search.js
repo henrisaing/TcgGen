@@ -1,16 +1,23 @@
+// input search box id
 const search = document.querySelector('#search');
-const cards = document.querySelectorAll('.card');
+
+// input searchable items query
+const items = document.querySelectorAll('.card');
+
+// updates on user keyboard input
 search.addEventListener('input', (event) => {
-  console.log(search.value)
-  cards.forEach(function(card){
-        card.style.display = 'inline-block';
+  
+  // shows all items by default
+  items.forEach(function(item){
+        item.style.display = 'inline-block';
     });
-  // console.log(cards)
+  
+  // if search is not empty
+    // hides any items that dont match search query
   if(search.value != ""){
-    cards.forEach(function(card){
-      console.log(nodeToString(card))
-      if (nodeToString(card).replace(/\(|\)/g, '').search(new RegExp(search.value.replace(/\(|\)/g, ''), 'i')) == -1){
-        card.style.display = 'none';
+    items.forEach(function(item){
+      if (nodeToString(item).replace(/\(|\)/g, '').search(new RegExp(search.value.replace(/\(|\)/g, ''), 'i')) == -1){
+        item.style.display = 'none';
       }
     });
   }

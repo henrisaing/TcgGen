@@ -30,7 +30,7 @@ function updateInputs(){
     }
   });
 
-  setTimeout(function(){updateInputs()}, 1000);
+  setTimeout(function(){updateInputs()}, 750);
 }
 
 

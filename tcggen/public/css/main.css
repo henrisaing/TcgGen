@@ -87,7 +87,11 @@ input[type=submit] , button{
   border:1px solid black;
 }
 
-input, textarea{position:relative;z-index:2;background-color:white;border:1px solid black;}
+input, textarea{
+  position:relative;
+  z-index:2;
+  background-color:white;border:1px solid black;
+}
 
 input[type=submit]:hover , button:hover{
   background-color:rgb(220,220,220);
