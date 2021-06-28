@@ -11,25 +11,39 @@ use App\AuthCheck;
 
 class CardController extends Controller
 {
-    //
+    //not used yet, set/show displays all cards in set
   public function index(){
     return view('cards.index');
   }
 
   public function newCard(Set $set){
-    $template = $set->template();
-    return view('cards.new-vertical', [
-      'set' => $set,
-      'template' => $template,
-      'collection' => $set->collection()->first(),
-    ]);
+    $collection = $set->collection()->first();
+
+    if (AuthCheck::collectPerms($collection)['owner']) :
+      $template = $set->template();
+      $view = view('cards.new-vertical', [
+        'set' => $set,
+        'template' => $template,
+        'collection' => $set->collection()->first(),
+      ]);
+    else:
+      $view = "You do not have permission to make a new card.";
+    endif;
+
+    return $view;
   }
 
   public function storeCard(Set $set, Request $request){
+    $collection = $set->collection()->first();
+
+    if (AuthCheck::collectPerms($collection)['owner']) :
       $card = new Card();
       $card->createCard($set, $request);
       $view = redirect('/collection/'.$set->collection()->first()->id.'/set/'.$set->id);
-      
+    else:
+      $view = "You do not have permission to make a new card.";
+    endif;
+
     return $view;
   }
 
@@ -68,7 +82,11 @@ class CardController extends Controller
   }
 
   public function updateCard(Card $card, Request $request){
-    $card->updateCard($request);
+    $collection = $card->set()->first()->collection()->first();
+
+    if(AuthCheck::collectPerms($collection)['owner']):
+      $card->updateCard($request);
+    endif;
 
     $view = redirect('/card/'.$card->id);
 
