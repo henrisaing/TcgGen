@@ -7,6 +7,7 @@
   <a href="/card/<?=$card->id?>"><?=$card->name?></a> >>
   <h2>Edit</h2>
 </nav>
+<br>
 <!-- card -->
 <div class="card card-portrait card-border card-background-white card-border-radius10 text-white text-border" id="card" style="border-color:<?=$card['card-border']?>">
 

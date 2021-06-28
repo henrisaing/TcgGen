@@ -11,6 +11,7 @@
   <?php endif ?>
   <h2><?=$card->name?></h2>
 </nav>
+<br>
 <!-- card 1 -->
 <div class="card card-portrait card-background-white card-border card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>">
 
