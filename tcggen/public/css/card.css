@@ -109,3 +109,22 @@ input{
 .card-pic:empty{
   background-color:yellow;
 }
+
+
+/*error page*/
+.card-error-x{
+  font-size:1.5in;
+  color:white;
+  text-shadow:none;
+  border:1px solid white;
+}
+
+.card-error-midcenter{
+  background-color:white;
+  text-shadow:none;
+  color:black;
+}
+
+.card-element a{
+  text-shadow:none;
+}

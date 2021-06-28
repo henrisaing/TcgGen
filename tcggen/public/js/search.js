@@ -16,6 +16,7 @@ search.addEventListener('input', (event) => {
     // hides any items that dont match search query
   if(search.value != ""){
     items.forEach(function(item){
+      //TODO make searches more robust, OR AND
       if (nodeToString(item).replace(/\(|\)/g, '').search(new RegExp(search.value.replace(/\(|\)/g, ''), 'i')) == -1){
         item.style.display = 'none';
       }

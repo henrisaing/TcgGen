@@ -27,7 +27,8 @@ class CardController extends Controller
         'collection' => $set->collection()->first(),
       ]);
     else:
-      $view = "You do not have permission to make a new card.";
+      $msg = "You do not have permission to make a new card.";
+      $view = view('errors.error', ['errorMsg' => $msg]);
     endif;
 
     return $view;
@@ -41,7 +42,8 @@ class CardController extends Controller
       $card->createCard($set, $request);
       $view = redirect('/collection/'.$set->collection()->first()->id.'/set/'.$set->id);
     else:
-      $view = "You do not have permission to make a new card.";
+      $msg = "You do not have permission to make a new card.";
+      $view = view('errors.error', ['errorMsg' => $msg]);
     endif;
 
     return $view;
@@ -59,7 +61,8 @@ class CardController extends Controller
         'auth' => $auth,
       ]);
     else:
-      $view = 'You do not have permissions to view this card.';
+      $msg = 'You do not have permissions to view this card.';
+      $view = view('errors.error', ['errorMsg' => $msg]);
     endif;
 
     return $view;
