@@ -91,4 +91,44 @@ class Card extends Model
     return $card;
   }
 
+
+// super nasty code
+  public function updateAllCards($request){
+    $set = $this->set()->first();
+    $cards = $set->cards()->get();
+    $attributes = [
+      'description',
+      'public',
+      'topleft',
+      'topright',
+      'topmid',
+      'botleft',
+      'botright',
+      'botmid',
+      'midleft',
+      'midright',
+      'midcenter',
+      'midlower',
+      'midupper',
+      'card-pic-upper',
+      'card-pic-full',
+      'card-background',
+      'card-border',
+    ];
+
+    // loops through attributes to check request values
+    foreach ($attributes as $key):
+      // parses out blank spaces
+      $tmp = str_replace( chr( 194 ) . chr( 160 ),'', $request[$key]);
+      // if request[key] has content
+      if ($tmp != ''):
+        if ($tmp == '[BLANK]'):
+          Card::query()->update([$key => str_repeat('&nbsp;', 5)]);
+        else:
+          Card::query()->update([$key => $tmp]);
+        endif;
+      endif;
+    endforeach;
+  }
+
 }

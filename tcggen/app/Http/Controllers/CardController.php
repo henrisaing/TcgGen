@@ -120,4 +120,17 @@ class CardController extends Controller
 
     return $view;
   }
+
+  public function applyToAllCards(Card $card, Request $request){
+    $set = $card->set()->first();
+    $collection = $set->collection()->first();
+
+    if(AuthCheck::collectPerms($collection)['owner']):
+      $card->updateAllCards($request);
+    endif;
+
+    $view = redirect('/collection/'.$collection->id.'/set/'.$set->id);
+
+    return $view;
+  }
 }

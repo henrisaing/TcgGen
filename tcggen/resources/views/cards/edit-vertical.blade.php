@@ -170,10 +170,13 @@
 
     <br><br>
 
-    <div id="card-fields">
-      
-    </div>
-    <input type="submit" name="" value="Save Changes">
+    <!-- autopopulated fields here -->
+    <div id="card-fields"></div>
+
+    <input type="submit" name="" value="Save Card">
+    <?php if ($card['name'] == '[TEMPLATE]'): ?>
+      <button id="apply">Apply All</button>
+    <?php endif ?>
     <!-- <button onclick="updateInputs()">save card </button> -->
     <button class="lb-link" func="/card/<?=$card->id?>/delete">Delete</button>
   </form>
@@ -189,6 +192,12 @@
     <script type="text/javascript">
       $('#card-border').on('change',function(){
         $('#card').css('border-color', $(this)[0].value);
+      });
+
+      $('#apply').on('click', function(e){
+        e.preventDefault();
+        $('#card-form').attr('action', '/card/<?=$card->id?>/applyall');
+        $('#card-form').submit();
       });
     </script>
 

@@ -176,7 +176,7 @@ nav.right-side{
 /*GENERAL*/
 /*
 */
-body{
+html, body{
   font-family: "Roboto Slab", serif;
   font-weight: 300;
 }

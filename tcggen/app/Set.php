@@ -56,7 +56,8 @@ class Set extends Model
     return $set;
   }
 
-
+  // searches set for template
+  // returns [hasTemplate => bool, template => Card card]
   public function template(){
     $cards = $this->cards()->get();
     $template = ["hasTemplate" => false, "template" => null];

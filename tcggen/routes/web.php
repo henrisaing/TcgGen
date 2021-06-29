@@ -50,6 +50,7 @@ Route::get('/card/{card}/edit', 'CardController@editCard');
 Route::post('/card/{card}/update', 'CardController@updateCard');
 Route::delete('/card/{card}/delete', 'CardController@deleteCard');
 Route::get('/card/{card}/delete', 'CardController@deleteCardForm');
+Route::post('/card/{card}/applyall', 'CardController@applyToAllCards');
 
 // session handling
 Route::post('/session', 'SessionController@theme');
