@@ -123,9 +123,13 @@ class Card extends Model
       // if request[key] has content
       if ($tmp != ''):
         if ($tmp == '[BLANK]'):
-          Card::query()->update([$key => str_repeat('&nbsp;', 5)]);
+          foreach ($cards as $card):
+            $card->update([$key => str_repeat('&nbsp;', 5)]);
+          endforeach;
         else:
-          Card::query()->update([$key => $tmp]);
+          foreach ($cards as $card):
+            $card->update([$key => $tmp]);
+          endforeach;
         endif;
       endif;
     endforeach;
