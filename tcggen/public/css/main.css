@@ -231,7 +231,7 @@ h2{
   }
 
   input[type=text], input[type=submit], input[type=password], button{
-    width:98%;
+    width:95%;
   }
 
   #lb-close{
