@@ -149,23 +149,27 @@
     <br><br><br>
 
     <!-- radio buttons for public -->
+    <label for="public">
     <input type="radio" name="public" value="public" id="public"
     <?php if ($card['public'] == 'public'): ?>
       checked
     <?php endif ?>
-    ><label for="public">public</label>
+    >public</label>
     <br>
+
+    <label for="private">
     <input type="radio" name="public" value="private" id="private"
     <?php if ($card['public'] == 'private'): ?>
       checked
     <?php endif ?>
-    ><label for="private">private</label>  <br>
+    >private</label>  <br>
 
+    <label for="shareable">
     <input type="radio" name="public" value="shareable" id="shareable"
     <?php if ($card['public'] == 'shareable'): ?>
       checked
     <?php endif ?>
-    ><label for="shareable">shareable</label> 
+    >shareable</label> 
     <!-- end public radio -->
 
     <br><br>

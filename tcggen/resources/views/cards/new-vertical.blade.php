@@ -165,12 +165,14 @@
     <br><br><br>
 
     <!-- radio buttons for public -->
+    <label for="public">
     <input type="radio" name="public" value="public" id="public"
     <?php if ($template['hasTemplate'] && $template['template']['public'] == 'public'): ?>
           checked
       <?php endif; ?>
-    ><label for="public">public</label><br>
+    >public</label><br>
 
+    <label for="private">
     <input type="radio" name="public" value="private" id="private" 
       <?php if ($template['hasTemplate']):?>
         <?php if ($template['template']['public'] == 'private'): ?>
@@ -179,13 +181,14 @@
       <?php else:?>
         checked
       <?php endif; ?> 
+    >private</label>  <br>
 
-    ><label for="private">private</label>  <br>
+    <label for="shareable">
     <input type="radio" name="public" value="shareable" id="shareable"
       <?php if ($template['hasTemplate'] && $template['template']['public'] == 'shareable'): ?>
           checked
       <?php endif; ?>
-    ><label for="shareable">shareable</label> 
+    >shareable</label> 
     <!-- end public radio buttons -->
 
     <br><br>
