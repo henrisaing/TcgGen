@@ -7,33 +7,38 @@
 {{ csrf_field() }}
 
   name <input type="text" name="name" value="<?=$collection->name?>">
-  <br>
+  <br><br>
 
-  image <textarea name="image" rows="3"><?=$collection->image?></textarea>
-  <br>
+  image <textarea name="image"><?=$collection->image?></textarea>
+  <br><br>
 
   description 
-  <textarea name="description" rows="3"><?=$collection->description?></textarea>
-  <br>
-
+  <textarea name="description"><?=$collection->description?></textarea>
   <br><br>
-    <input type="radio" name="public" value="public" id="public"
-    <?php if ($collection['public'] == 'public'): ?>
-      checked
-    <?php endif ?>
-    ><label for="public">public</label><br>
 
-    <input type="radio" name="public" value="private" id="private"
-    <?php if ($collection['public'] == 'private'): ?>
-      checked
-    <?php endif ?>
-    ><label for="private">private</label>  <br>
+    <label for="public">
+      <input type="radio" name="public" value="public" id="public"
+        <?php if ($collection['public'] == 'public'): ?>
+          checked
+        <?php endif ?>
+      >public
+    </label>
 
-    <input type="radio" name="public" value="shareable" id="shareable"
-    <?php if ($collection['public'] == 'shareable'): ?>
-      checked
-    <?php endif ?>
-    ><label for="shareable">shareable</label> 
+    <label for="private">
+      <input type="radio" name="public" value="private" id="private"
+      <?php if ($collection['public'] == 'private'): ?>
+        checked
+      <?php endif ?>
+      >private
+    </label>
+
+    <label for="shareable">
+      <input type="radio" name="public" value="shareable" id="shareable"
+        <?php if ($collection['public'] == 'shareable'): ?>
+          checked
+        <?php endif ?>
+      >shareable
+    </label> 
 
   <br>
   <input type="submit" name="submit" value='submit'>

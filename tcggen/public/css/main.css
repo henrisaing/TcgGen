@@ -103,8 +103,8 @@ input[type=radio]{
   float:left;
   border:1px solid black;
 }
-label{display:inline-block;text-align:left;float:left;}
-label.under, label.over{display:block;font-weight:strong;font-size:0.8em;text-align:left;}
+label{display:inline-block;text-align:left;float:left;width:100%;}
+label.under, label.over{display:block;font-size:0.8em;text-align:left;}
 
 form#card-form input[type=text], form#card-form textarea{
   width:2.5in;
@@ -230,8 +230,8 @@ h2{
     width:100%;
   }
 
-  input[type=text], input[type=submit], button{
-    width:100%;
+  input[type=text], input[type=submit], input[type=password], button{
+    width:99%;
   }
 
   #lb-close{

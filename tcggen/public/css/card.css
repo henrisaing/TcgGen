@@ -128,3 +128,16 @@ input{
 .card-element a{
   text-shadow:none;
 }
+
+
+/*misc*/
+.card button{
+  background-color:rgba(250,250,250,0.5);
+}
+
+.card a{
+  font-size:1.2em;
+  text-decoration:underline;
+  color:rgb(80,80,250);
+  /*background-color:rgba(20,20,20,0.5);*/
+}

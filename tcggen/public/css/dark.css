@@ -39,3 +39,13 @@ input#search{
   border-bottom:1px solid white;
   color:white;
 }
+
+#lb-close{
+  color:black;
+  border-color:black;
+}
+
+.card button{
+  border-color:black;
+  color:black;
+}

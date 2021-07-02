@@ -58,7 +58,7 @@
         <a href="/session" onclick="event.preventDefault(); document.getElementById('theme').submit();">Dark Mode</a>
     <?php endif ?> | 
     @guest
-    <a href="{{route('login')}}">Login</a>
+    <a href="{{route('login')}}">Login</a> | 
     <a href="{{route('register')}}">Register</a>
     @else
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>

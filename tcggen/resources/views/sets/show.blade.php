@@ -11,7 +11,7 @@
   </h2>
   <input id="search" type="text" placeholder="Search">
 </nav>
-  IMG <?= $set->image; ?> | DESC <?= $set->description; ?> | PUB <?= $set->public; ?>
+  <?= $set->description; ?>
   <br>
   
   <?php if ($auth['owner']): ?>

@@ -3,15 +3,18 @@
 <form id="popup-form" action="/collection/<?=$collection->id?>/set/store" method="post">
 {{ csrf_field() }}
 
-  name <input type="text" name="name"> <br>
+  name <input type="text" name="name"> <br><br>
 
-  image <textarea name="image"></textarea> <br>
+  image <textarea name="image"></textarea> <br><br>
 
-  description <textarea name="description"></textarea><br>
+  description <textarea name="description"></textarea><br><br>
 
-  <input type="radio" name="public" value="public" id="public"><label for="public">public</label>  <br>
-  <input type="radio" name="public" value="private" id="private" checked><label for="private">private</label>  <br>
-  <input type="radio" name="public" value="shareable" id="shareable"><label for="shareable">shareable</label> 
+  <label for="public">
+  <input type="radio" name="public" value="public" id="public">public</label>
+  <label for="private">
+  <input type="radio" name="public" value="private" id="private" checked>private</label>
+  <label for="shareable">
+  <input type="radio" name="public" value="shareable" id="shareable">shareable</label> 
   
   <br>
   <input type="submit" value="Create Set">

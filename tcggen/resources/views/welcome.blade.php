@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="card card-portrait card-border card-border-radius10 vertical-center">
+<div class="card card-portrait card-border card-border-radius10 vertical-center card-background-white" style="border-color:#201F1C">
 
-  <div class="card-pic border-1px-black" style="background:none"></div>
+  <div class="card-pic border-1px-black" style="background-color:white"></div>
 
   <div class="card-element position-midcenter border-1px-black card-background-white">
   TCG Gen
@@ -32,7 +32,7 @@
     position:absolute;
     height:90%!important;
     left:0!important;
-    transform:translate(0,0) !important;
+    transform:translate(0,0);
   }
   nav{
     display:none;
@@ -41,6 +41,10 @@
   .card{
     font-family: "Roboto Slab", serif;
     font-weight: 300;
+    color:black;
+  }
+  .card-pic{
+    background-color:white;
   }
 </style>
 @stop
