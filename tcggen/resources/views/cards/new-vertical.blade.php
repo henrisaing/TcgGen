@@ -208,6 +208,7 @@
       $(document).ready(function(){
         $('#card-border').on('change',function(){
           $('#card').css('border-color', $(this)[0].value);
+          $('#card').css('background-color', $(this)[0].value);
         }).change();
       });
     </script>
