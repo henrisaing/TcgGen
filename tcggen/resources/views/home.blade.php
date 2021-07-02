@@ -7,7 +7,7 @@
 </nav>
     <button class="lb-link" func="/collection/new">new collection</button>
 
-    <br>
+    <br><br>
 <div id="card-box">
     <?php foreach($collections as $collection): ?>
         
