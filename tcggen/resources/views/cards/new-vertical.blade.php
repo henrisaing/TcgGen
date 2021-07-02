@@ -10,7 +10,7 @@
 <!-- card 1 -->
 <div class="card card-portrait card-background-white card-border card-border-radius10 text-white text-border" id="card">
 
-  <div class="card-element card-background card-background-white hotswaptext" element="card-background">
+  <div class="card-element card-background hotswaptext" element="card-background">
     <?php if ($template['hasTemplate']): ?>
       <?= $template['template']['card-background']; ?>
     <?php endif ?>
