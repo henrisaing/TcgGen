@@ -6,12 +6,9 @@
   <h2>  
   <?=$collection->name?>
   </h2>
+  <input id="search" type="text" placeholder="Search">
 </nav>
-
-<?php print($collection->name) ?>
-<?php print($collection->image) ?>
 <?php print($collection->description) ?>
-<?php print($collection->public) ?>
 
 <br>
 
@@ -53,4 +50,6 @@
   <?php endif; ?>
 <?php endforeach; ?>
 </div>
+
+<script src="{{ asset('js/search.js') }}"></script>
 @stop

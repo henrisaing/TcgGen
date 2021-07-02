@@ -8,16 +8,32 @@
     <button class="lb-link" func="/collection/new">new collection</button>
 
     <br>
-    
+<div id="card-box">
     <?php foreach($collections as $collection): ?>
-        <br>
-        <a href="/collection/{{$collection->id}}"><?php print($collection['name']); ?></a>
-        |<?php print($collection['image']); ?>
-        |<?php print($collection['description']); ?>
-        |<?php print($collection['public']); ?>
         
+    <div class="card card-portrait card-border card-border-radius10" style="border-color:#201F1C;background-color:#201F1C;">
+
+      <a href="/collection/{{$collection->id}}">
+      <div class="card-background">
+        <img src="<?=$collection->image?>">
+      </div>
+      </a>
+
+      <a href="/collection/{{$collection->id}}">
+        <div class="card-element position-midcenter card-background-white">
+          <?=$collection->name?>
+        </div>
+      </a>
+
+      <div class="card-element position-midlower card-background-transparent text-white text-border">
+        <?=$collection->description?>
+      </div>
+      <div class="card-element position-botmid">
+    
         <button class="lb-link" func="/collection/<?=$collection->id?>/edit">edit</button>
         <button class="lb-link" func="/collection/<?=$collection->id?>/delete">delete</button>
-        <br>
+      </div>
+    </div>
     <?php endforeach; ?>
+</div>
 @endsection
