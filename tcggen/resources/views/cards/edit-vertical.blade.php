@@ -9,7 +9,7 @@
 </nav>
 <br>
 <!-- card -->
-<div class="card card-portrait card-border card-background-white card-border-radius10 text-white text-border" id="card" style="border-color:<?=$card['card-border']?>">
+<div class="card card-portrait card-border card-background-white card-border-radius10 text-white text-border" id="card" style="border-color:<?=$card['card-border']?>;background-color:<?=$card['card-border']?>">
 
       <div class="card-element card-background hotswaptext" element="card-background">
         <?php if (str_contains($card['card-background'], "[IMG]")): ?>
@@ -192,6 +192,7 @@
     <script type="text/javascript">
       $('#card-border').on('change',function(){
         $('#card').css('border-color', $(this)[0].value);
+        $('#card').css('background-color', $(this)[0].value);
       });
 
       $('#apply').on('click', function(e){

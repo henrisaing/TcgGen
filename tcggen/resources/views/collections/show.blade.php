@@ -26,14 +26,14 @@
 <div id="card-box">
 <?php foreach ($sets as $set): ?>
   <?php if ($auth['owner'] || $set['public'] == 'public'): ?>
-    <div class="card card-portrait card-border card-border-radius10 card-background-white" style="border-color:#201F1C;">
+    <div class="card card-portrait card-border card-border-radius10" style="border-color:#201F1C;background-color:#201F1C;">
 
       <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>">
       <div class="card-background">
         <img src="<?=$set->image?>">
       </div>
       </a>
-      
+
       <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>">
         <div class="card-element position-midcenter card-background-white">
           <?=$set->name?>
