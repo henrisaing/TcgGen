@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <nav>
-  <a href="/home">home</a> 
+  <a href="/home">home</a> >>
   <h2>Error</h2>
 </nav>
 <br>

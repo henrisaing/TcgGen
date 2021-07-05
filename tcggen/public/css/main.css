@@ -148,7 +148,7 @@ nav{
   margin: 0;
   padding: 0;
   text-align:left;
-  display:block;
+  /*display:block;*/
 }
 
 nav.right-side{
@@ -157,7 +157,11 @@ nav.right-side{
   width:auto;
 }
 
-.container{float:left;}
+nav h2 a{
+  font-size:0.8em;
+  font-weight:300;
+}
+/*.container{float:left;}*/
 
 /*END NAV*/
 /*
@@ -218,6 +222,10 @@ h2{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.smaller{
+  font-size:0.5em;
+}
+
 /*END MISC*/
 /*
 */

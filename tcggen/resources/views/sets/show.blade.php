@@ -1,14 +1,22 @@
 @extends('layouts.main')
 
 @section('content')
-<?php if ($auth['owner'] || $set->public == 'public' || $set->public == 'shareable'): ?>
-  
 <nav>
-  <a href="/home">home</a> >>
-  <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
-  <h2>    
-    <?=$set->name?>
-  </h2>
+    <a href="/home">home</a> >>
+    <a href="/collection/<?=$collection->id?>">
+      <?php if (!(empty($collection->name))): ?>
+        <?=$collection->name?>
+      <?php else: ?>
+        Collection
+      <?php endif; ?>
+    </a> >>
+    <h2>
+      <?php if (!(empty($set->name))): ?>
+        <?=$set->name?>
+      <?php else: ?>
+        Set
+      <?php endif; ?>
+    </h2>
   <input id="search" type="text" placeholder="Search">
 </nav>
   <?= $set->description; ?>
@@ -148,7 +156,4 @@
 </div>
 
 <script src="{{ asset('js/search.js') }}"></script>
-<?php else: ?>
-  You do not have permission to view this set.
-<?php endif; ?>
 @stop

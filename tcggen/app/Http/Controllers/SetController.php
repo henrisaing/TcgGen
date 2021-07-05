@@ -39,14 +39,21 @@ class SetController extends Controller
     $cards = $set->cards()->get();
     $template = $set->template();
     $auth = AuthCheck::collectPerms($collection);
+    
+    if ($auth['owner'] || $set->public == 'public' || $set->public == 'shareable'):
+      $view = view('sets.show', [
+        'auth' => $auth,
+        'collection' => $collection, 
+        'set' => $set,
+        'cards' => $cards,
+        'template' => $template,
+      ]);
+    else:
+      $msg = "You do not have permission to view this set.";
+      $view = view('errors.error', ['errorMsg' => $msg]);
+    endif;
 
-    return view('sets.show', [
-      'auth' => $auth,
-      'collection' => $collection, 
-      'set' => $set,
-      'cards' => $cards,
-      'template' => $template,
-    ]);
+    return $view;
   }
 
   public function deleteSetForm(Set $set){

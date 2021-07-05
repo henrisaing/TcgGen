@@ -2,9 +2,27 @@
 @section('content')
 <nav>
   <a href="/home">home</a> >>
-  <a href="/collection/<?=$collection->id?>"><?=$collection->name?></a> >>
-  <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>"><?=$set->name?></a> >>
-  <a href="/card/<?=$card->id?>"><?=$card->name?></a> >>
+  <a href="/collection/<?=$collection->id?>">
+    <?php if (!(empty($collection->name))): ?>
+      <?=$collection->name?>
+    <?php else: ?>
+      Collection
+    <?php endif; ?>
+  </a> >>
+  <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>">
+    <?php if (!(empty($set->name))): ?>
+      <?=$set->name?>
+    <?php else: ?>
+      Set
+    <?php endif; ?>
+  </a> >>
+  <a href="/card/<?=$card->id?>">
+    <?php if (!(empty($card->name))): ?>
+      <?=$card->name?>
+    <?php else: ?>
+      Card
+    <?php endif; ?>
+  </a> >>
   <h2>Edit</h2>
 </nav>
 <br>

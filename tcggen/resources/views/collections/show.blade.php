@@ -3,8 +3,12 @@
 @section('content')
 <nav>
   <a href="/home">home</a> >>
-  <h2>  
-  <?=$collection->name?>
+  <h2>
+    <?php if (!(empty($collection->name))): ?>
+      <?=$collection->name?>
+    <?php else: ?>
+      Collection
+    <?php endif; ?>
   </h2>
   <input id="search" type="text" placeholder="Search">
 </nav>

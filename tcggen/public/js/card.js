@@ -23,8 +23,8 @@ function updateInputs(){
         $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).html().trim().replace(/\"/g,'&quot;').replace(/\</g,'&#60;').replace(/\>/g,'&gt;')+'">');
 
         // converts [IMG]url into <img>
-        if ($(this).html().trim().includes("[IMG]")) {
-          $(this).html('<img src="'+$(this).html().trim().replace('[IMG]','')+'">');
+        if ($(this).html().trim().search(/\[IMG\]/i) !== -1) {
+          $(this).html('<img src="'+$(this).html().trim().replace(/\[IMG\]/i,'')+'">');
         }
       // }
     }
