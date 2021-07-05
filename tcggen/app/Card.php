@@ -122,7 +122,7 @@ class Card extends Model
       $tmp = str_replace( chr( 194 ) . chr( 160 ),'', $request[$key]);
       // if request[key] has content
       if ($tmp != ''):
-        if ($tmp == '[BLANK]'):
+        if (preg_match("/\[BLANK\]/i", $tmp)):
           foreach ($cards as $card):
             $card->update([$key => str_repeat('&nbsp;', 5)]);
           endforeach;
