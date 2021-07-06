@@ -1,3 +1,9 @@
+// TO USE
+// either add 'search' id to element u want to use as page search/filtering
+// or specify element in the html body using var search
+// eg. <script type="text/javascript">var search = document.querySelector('#search');</script> 
+// eg. items example <script type="text/javascript">var items = document.querySelectorAll('.card');</script> 
+
 // input search box id
 // can also be initialized in view
 if(typeof search == 'undefined'){
@@ -9,6 +15,7 @@ if(typeof search == 'undefined'){
 if(typeof items == 'undefined'){
   var items = document.querySelectorAll('.card');
 }
+
 // updates on user keyboard input
 search.addEventListener('input', (event) => {
   
