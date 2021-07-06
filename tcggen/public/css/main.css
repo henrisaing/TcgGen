@@ -134,7 +134,10 @@ input#search{
   font-size:1em;
 }
 input#search:focus{outline-width:0;}
-
+.sticky{
+  position:fixed;
+  top:0;
+}
 /*END SEARCH*/
 /*
 */

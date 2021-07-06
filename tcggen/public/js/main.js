@@ -12,19 +12,22 @@ document.addEventListener('DOMContentLoaded', (event)=>{
     
   });
 
+  // on user clicking shadowed area
   document.getElementById('dark-box').addEventListener('click', event => {
       event.stopPropagation();
       closeLightbox();
   });
+
+  // on user clicking close button
   document.getElementById('lb-close').addEventListener('click', event => {
       event.stopPropagation();
       closeLightbox();
   });
 
+  // on user clicking lightbox
+  // just here to prevent clickthrough
   document.getElementById('light-box').addEventListener('click', event => {
-      // console.log('light clicked');
       event.stopPropagation();
-      console.log();
   });
 
 
@@ -32,9 +35,10 @@ document.addEventListener('DOMContentLoaded', (event)=>{
 
 function closeLightbox(){
   document.getElementById('dark-box').style.display = "none";
-  // console.log('close');
 }
 
+// opens link content in lightbox instead of window/tab
+// uses func="url" instead of src
 function openLightbox(func){
   $.get(func, function(data){
         document.getElementById('light-box-content').innerHTML = data;
