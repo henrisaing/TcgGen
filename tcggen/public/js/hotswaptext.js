@@ -14,8 +14,9 @@ $(document).ready(function(){
 // if true, do nothing
   $(hotswaptext).on("click",function(){
     var target = $(this);
+    
     if(target.find("textarea").length == 0){
-      target.html("<textarea>"+target.html().trim()+"</textarea>");
+      target.html("<textarea rows="+lineCount(target.html().trim())+">"+target.html().trim().replace(/\&nbsp\;/ig,'').replace(/\<br\>/g, '\n')+"</textarea>");
       $(hotswaptext+" textarea").focus();
     }
   });
@@ -40,7 +41,7 @@ $(document).ready(function(){
         // sets target html to input value
         // sets to blank space if empty
         if(target.find("textarea").val().trim().length > 0){
-          $(target).html(target.find("textarea").val().trim());
+          $(target).html(target.find("textarea").val().trim().replace(/(?:\r\n|\r|\n)/g, '<br>'));
         }else{
           $(target).html('&nbsp;&nbsp;&nbsp;');
         }
@@ -67,3 +68,9 @@ $(document).ready(function(){
 
  });
 
+// counts lines to set textarea rows
+function lineCount(string){
+  var lines = string.split(/\r|\r\n|\n|\<br\>/);
+  var count = lines.length;
+  return count;
+}

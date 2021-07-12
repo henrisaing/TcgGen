@@ -39,6 +39,18 @@ function updateInputs(){
 $(window).keydown(function(event){
   if(event.keyCode == 13) {
     event.preventDefault();
+    // document.activeElement.blur();
+    // console.log(document.activeElement.selectionStart);
+    // document.activeElement.value += "\n";
+    var before = document.activeElement.value.substring(0, document.activeElement.selectionStart);
+    var after = document.activeElement.value.substring(document.activeElement.selectionStart, document.activeElement.value.length);
+    // console.log('before:'+before);
+    // console.log('after:'+after)
+    document.activeElement.value = before + "\n" + after;
+    return false;
+  }
+
+  if(event.keyCode == 27){
     document.activeElement.blur();
     return false;
   }
