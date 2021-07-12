@@ -47,11 +47,14 @@ $(window).keydown(function(event){
     // console.log('before:'+before);
     // console.log('after:'+after)
     document.activeElement.value = before + "\n" + after;
+    document.activeElement.selectionEnd = parseInt(before.length)+1;
+
     return false;
   }
 
   if(event.keyCode == 27){
     document.activeElement.blur();
+    
     return false;
   }
 });
