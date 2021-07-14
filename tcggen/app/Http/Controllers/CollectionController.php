@@ -58,7 +58,8 @@ class CollectionController extends Controller
         'auth' => $auth,
       ]);
     else:
-      $view = 'You do not have permission to view this collection.';
+      $msg = "You do not have permission to view this collection.";
+      $view = view('errors.error', ['errorMsg' => $msg]);
     endif;
 
     return $view;

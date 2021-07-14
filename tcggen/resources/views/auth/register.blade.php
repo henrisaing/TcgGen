@@ -2,8 +2,8 @@
 
 @section('content')
 <nav>
-<br>
-<h2>Register</h2>
+    <br>
+    <h2>Register</h2>
 </nav>
 <div class="card">
     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
