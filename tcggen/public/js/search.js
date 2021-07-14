@@ -44,27 +44,3 @@ function nodeToString ( node ) {
    tmpNode = node = null; // prevent memory leaks in IE
    return str;
 }
-
-
-// from https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
-// When the user scrolls the page, execute myFunction
-// window.onscroll = function() {stickSearch()};
-
-// Get the navbar
-
-// Get the offset position of the navbar
-// var sticky = search.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-// function stickSearch() {
-//   console.log('scroll');
-//   console.log(window.pageYOffset);
-//   console.log(sticky);
-//   if (window.pageYOffset >= sticky) {
-//     search.style.position = "fixed";
-//     search.style.top = "0";
-//   } else {
-//     search.style.position = "relative";
-//     search.style.top = "0";
-//   }
-// }

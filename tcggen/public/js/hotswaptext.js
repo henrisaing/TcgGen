@@ -20,13 +20,6 @@ $(document).ready(function(){
       $(hotswaptext+" textarea").focus();
     }
   });
-  // $(hotswaptext).on("click",function(){
-  //   var target = $(this);
-  //   if(target.find("input").length == 0){
-  //     target.html("<input type='text' name='' value='"+target.html().trim()+"' width='"+target.html().length+"'>");
-  //     $(hotswaptext+" input").focus();
-  //   }
-  // });
 
 
 // on focusout
@@ -49,23 +42,6 @@ $(document).ready(function(){
       }
     });
   });
-  // $(document).on("focusout", hotswaptext+" input", function(){
-  //   $(hotswaptext).each(function(){
-  //     var target = $(this);
-  //     if(target.find("input").length > 0){
-  //       // checks input str length
-  //       // sets target html to input value
-  //       // sets to blank space if empty
-  //       if(target.find("input").val().trim().length > 0){
-  //         $(target).html(target.find("input").val().trim());
-  //       }else{
-  //         $(target).html('&nbsp;&nbsp;&nbsp;');
-  //       }
-
-  //     }
-  //   });
-  // });
-
  });
 
 // counts lines to set textarea rows

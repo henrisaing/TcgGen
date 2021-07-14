@@ -9,28 +9,22 @@ function updateInputs(){
   $('#card-fields').html(' ');
 
   $('.hotswaptext').each(function(){
-    // if card element isnt an input currently
+    // if card element isnt a textarea currently
+    element = $(this).attr('element');
     if($(this).find("textarea").length == 0){
-      element = $(this).attr('element');
-
-      // if an image is detected
-      // pass the img src as [IMG]src
-      // if($(this).find("img").length > 0){
-      //   $('#card-fields').append('<input type="hidden" name="'+element+'" value="[IMG]'+$(this).find('img').attr('src')+'">');
-      // }else{
-        //if sanitization is needed in frontend
-        // $('#card-fields').append('<input type="text" name="'+element+'" value="'+$(this).html().toString().trim().replace(/</g,'&#60;').replace(/"/,'&quot;').replace(/\//g,'&#47;').replace(/>/g,'&gt;')+'">');
         $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).html().trim().replace(/\"/g,'&quot;').replace(/\</g,'&#60;').replace(/\>/g,'&gt;')+'">');
 
         // converts [IMG]url into <img>
         if ($(this).html().trim().search(/\[IMG\]/i) !== -1) {
           $(this).html('<img src="'+$(this).html().trim().replace(/\[IMG\]/i,'')+'">');
         }
-      // }
+    }else{
+      // logs textareas
+      $('#card-fields').append('<input type="hidden" name="'+element+'" value="'+$(this).find('textarea').val().trim().replace(/\"/g,'&quot;').replace(/\</g,'&#60;').replace(/\>/g,'&gt;')+'">');
     }
   });
 
-  setTimeout(function(){updateInputs()}, 750);
+  setTimeout(function(){updateInputs()}, 500);
 }
 
 
@@ -44,7 +38,7 @@ $(window).keydown(function(event){
     document.activeElement.value = before + "\n" + after;
     document.activeElement.selectionEnd = parseInt(before.length)+1;
     document.activeElement.rows += 1;
-    
+
     return false;
   }
 
