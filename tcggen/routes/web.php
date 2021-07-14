@@ -26,7 +26,7 @@ Route::get('/collection/{collection}/delete','CollectionController@deleteCollect
 Route::get('/collection/{collection}','CollectionController@show');
 
 // sets routes
-Route::get('/sets', 'SetController@index');
+Route::get('/collection/{collection}/sets', 'SetController@index');
 Route::get('/collection/{collection}/set/new','SetController@newSet');
 Route::post('/collection/{collection}/set/store','SetController@storeSet');
 Route::get('/collection/{collection}/set/{set}','SetController@showSet');

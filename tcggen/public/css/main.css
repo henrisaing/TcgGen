@@ -229,6 +229,12 @@ h2{
   font-size:0.5em;
 }
 
+a.lb-link:hover{
+  cursor:pointer;
+}
+a:hover{
+  text-decoration:underline;
+}
 /*END MISC*/
 /*
 */

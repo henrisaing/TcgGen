@@ -12,8 +12,17 @@ use App\AuthCheck;
 class SetController extends Controller
 {
     //
-  public function index(){
-    return view('sets.index');
+  public function index(Collection $collection){
+    $sets = $collection->sets()->get();
+    $auth = AuthCheck::collectPerms($collection);
+    
+    $view = view('sets.index',[
+      'collection' => $collection,
+      'sets' => $sets,
+      'auth' => $auth,
+    ]);
+
+    return $view;
   }
 
   public function newSet(Collection $collection){

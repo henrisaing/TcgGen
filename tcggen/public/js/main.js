@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event)=>{
   const lbLinks = document.querySelectorAll('button.lb-link');
+  const lbAnchor = document.querySelectorAll('a.lb-link');
 
   // lightbox-link button clicks
   // gets contents of 'func' url
@@ -9,7 +10,13 @@ document.addEventListener('DOMContentLoaded', (event)=>{
       event.preventDefault();
       openLightbox(button.getAttribute('func'));
     });
-    
+  });
+
+  lbAnchor.forEach(anchor => {
+    anchor.addEventListener('click', event=>{
+      event.preventDefault();
+      openLightbox(anchor.getAttribute('func'));
+    });
   });
 
   // on user clicking shadowed area

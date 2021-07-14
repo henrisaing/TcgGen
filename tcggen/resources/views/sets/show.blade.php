@@ -9,7 +9,11 @@
       <?php else: ?>
         Collection
       <?php endif; ?>
-    </a> >>
+    </a> 
+    <a class="lb-link" func="/collection/<?=$collection->id?>/sets">  
+      <strong> >> </strong>
+    </a>
+
     <h2>
       <?php if (!(empty($set->name))): ?>
         <?=$set->name?>
