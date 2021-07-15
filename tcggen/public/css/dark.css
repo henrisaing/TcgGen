@@ -49,3 +49,29 @@ input#search{
   border-color:black;
   color:black;
 }
+
+/*SCROLLBAR*/
+/*
+*/
+html::-webkit-scrollbar{
+    width: 10px;
+    height:10px;
+  }
+
+html::-webkit-scrollbar-track:vertical{
+    background: black;
+    border-left:1px solid white;
+}
+html::-webkit-scrollbar-track:horizontal{
+    background: black;
+    border-top:1px solid white;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-image: repeating-linear-gradient(45deg, white 0, white 1px, black 0, black 50%);
+    background-size: 10px 10px;
+    border:1px solid white;
+  }
+/*END SCROLLBAR*/
+/*
+*/

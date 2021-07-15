@@ -77,7 +77,7 @@
       <div id="light-box-content">
       </div>
       <!-- <button id="lb-save">save</button> -->
-      <button id="lb-close">x</button>
+      <button id="lb-close" style="display:none">x</button>
     </div>
   </div>
 
