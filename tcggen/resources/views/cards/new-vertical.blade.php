@@ -9,7 +9,7 @@
       Collection
     <?php endif; ?>
   </a> 
-  <a class="lb-link" func="/collection/<?=$collection->id?>/sets">  
+  <a class="lb-link" href="" func="/collection/<?=$collection->id?>/sets">  
     <strong> >> </strong>
   </a>
   <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>">

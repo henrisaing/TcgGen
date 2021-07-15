@@ -5,10 +5,10 @@
 
   name<input type="text" name="name"><br><br>
 
-  image<textarea name="image"></textarea>
+  image<textarea style="resize:none" name="image"></textarea>
   <br><br>
 
-  description<textarea name="description"></textarea>
+  description<textarea style="resize:none" name="description"></textarea>
   <br><br>
   <label for="public">
     <input type="radio" name="public" value="public" id="public">Public

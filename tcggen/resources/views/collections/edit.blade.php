@@ -9,11 +9,11 @@
   name <input type="text" name="name" value="<?=$collection->name?>">
   <br><br>
 
-  image <textarea name="image"><?=$collection->image?></textarea>
+  image <textarea style="resize:none" name="image"><?=$collection->image?></textarea>
   <br><br>
 
   description 
-  <textarea name="description"><?=$collection->description?></textarea>
+  <textarea style="resize:none" name="description"><?=$collection->description?></textarea>
   <br><br>
 
     <label for="public">
