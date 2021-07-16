@@ -277,11 +277,10 @@ html::-webkit-scrollbar-thumb:active,.overflow::-webkit-scrollbar-thumb:active {
 .smaller{
   font-size:0.5em;
 }
-
 a.lb-link:hover{
   cursor:pointer;
 }
-a:hover{
+nav a:hover, .overflow a:hover{
   text-decoration:underline;
 }
 /*END MISC*/
@@ -293,7 +292,7 @@ a:hover{
 */
 @media screen and (max-width: 800px){
   .container{
-    width:100%;
+    width:95%;
   }
 
   input[type=text], input[type=submit], input[type=password], button{
