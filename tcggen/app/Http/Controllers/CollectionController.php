@@ -50,12 +50,14 @@ class CollectionController extends Controller
   public function show(Collection $collection){
     $sets = $collection->sets()->get();
     $auth = AuthCheck::collectPerms($collection);
+    $decks = $collection->getDecks();
 
     if ($auth['owner'] || $auth['type'] == 'public' || $auth['type'] == 'shareable'):
       $view = view('collections.show',[
         'collection' => $collection,
         'sets' => $sets,
         'auth' => $auth,
+        'decks' => $decks,
       ]);
     else:
       $msg = "You do not have permission to view this collection.";

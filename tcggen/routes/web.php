@@ -52,5 +52,13 @@ Route::delete('/card/{card}/delete', 'CardController@deleteCard');
 Route::get('/card/{card}/delete', 'CardController@deleteCardForm');
 Route::post('/card/{card}/applyall', 'CardController@applyToAllCards');
 
+// deck routes
+Route::get('/collection/{collection}/decks', 'DeckController@decks');
+Route::get('/collection/{collection}/deck/new', 'DeckController@newDeck');
+Route::post('/collection/{collection}/deck/store', 'DeckController@storeDeck');
+Route::post('/deck/{deck}/add', 'DeckController@addCard');
+Route::post('/deck/{deck}/remove', 'DeckController@removeCard');
+Route::get('/deck/{deck}', 'DeckController@showDeck');
+
 // session handling
 Route::post('/session', 'SessionController@theme');

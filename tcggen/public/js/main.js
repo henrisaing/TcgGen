@@ -37,6 +37,48 @@ document.addEventListener('DOMContentLoaded', (event)=>{
       event.stopPropagation();
   });
 
+  // if dom contains SHOWSETS link
+  var showSets = document.getElementById('showSets');
+  if (document.body.contains(showSets)){
+    showSets.addEventListener('click', event=>{
+      event.preventDefault();
+      console.log('showsets');
+      showSets.removeAttribute("href");
+      showDecks.setAttribute('href', '');
+      document.getElementById('sets').style.display = 'block';
+      document.getElementById('decks').style.display = 'none';
+    })
+  }
+  // if dom contains SHOWDECKS link
+  var showDecks = document.getElementById('showDecks');
+  if (document.body.contains(showDecks)){
+    showDecks.addEventListener('click', event=>{
+      event.preventDefault();
+      showDecks.removeAttribute("href");
+      showSets.setAttribute('href', '');
+      document.getElementById('sets').style.display = 'none';
+      document.getElementById('decks').style.display = 'block';
+    })
+  }
+  
+
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.addEventListener('mouseover', event=>{
+      if(card.contains(card.querySelector('.overlay'))){
+        card.querySelector('.overlay').style.display = "block";
+        console.log('mouseover');
+      }
+    });
+  });
+  cards.forEach(card => {
+    card.addEventListener('mouseout', event=>{
+      if(card.contains(card.querySelector('.overlay'))){
+        console.log('mouseout');
+        card.querySelector('.overlay').style.display = "none";
+      }
+    });
+  });
 
 });
 

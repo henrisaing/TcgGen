@@ -48,7 +48,8 @@ class SetController extends Controller
     $cards = $set->cards()->get();
     $template = $set->template();
     $auth = AuthCheck::collectPerms($collection);
-    
+    $decks = $collection->getDecks();
+
     if ($auth['owner'] || $set->public == 'public' || $set->public == 'shareable'):
       $view = view('sets.show', [
         'auth' => $auth,
@@ -56,6 +57,7 @@ class SetController extends Controller
         'set' => $set,
         'cards' => $cards,
         'template' => $template,
+        'decks' => $decks,
       ]);
     else:
       $msg = "You do not have permission to view this set.";

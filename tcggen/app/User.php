@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function collections(){
         return $this->hasMany(Collection::class);
     }
+
+    public function decks(){
+        return $this->hasMany(Deck::class);
+  }
 }

@@ -20,12 +20,18 @@
       <?php else: ?>
         Set
       <?php endif; ?>
-    </h2>
+      : 
+      <a id="showSets">Cards</a> 
+      / 
+      <a href="" id="showDecks">Decks</a> 
+      </h2>
   <input id="search" type="text" placeholder="Search">
 </nav>
   <?= $set->description; ?>
   <br>
-  
+
+  <div id="card-box">
+  <div id="sets">
   <?php if ($auth['owner']): ?>
     <a href="/set/<?=$set->id?>/new" style="text-decoration:none;">
       <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
@@ -38,13 +44,11 @@
   <?php endif ?>
 
   <br><br>
-
-  <div id="card-box">
   <?php foreach ($cards as $card): ?>
     <?php if ($card->name != "[TEMPLATE]"): ?>
     <?php if ($auth['owner'] || $card->public == 'public'): ?>
 
-    <a href="/card/<?=$card->id?>">
+    <!-- <a href="/card/<?=$card->id?>"> -->
     <!-- card -->
     <div class="card card-portrait card-background-white card-border card-border-radius10 text-white text-border" style="border-color:<?=$card['card-border']?>;background-color:<?=$card['card-border']?>">
 
@@ -151,13 +155,57 @@
           <?= $card['midupper']; ?>
         <?php endif; ?>
       </div>
-    </div>
-    <!-- end card -->
-    </a>
+
+      <div class="overlay" style="display:none">
+        <a class="ajaxPost" func="">
+          Add to [active] deck.
+        </a>
+        <br><br><br>
+        <a href="/card/<?=$card->id?>">
+          View Card
+        </a>
+      </div>
+    </div> <!-- end card -->
+    <!-- </a> -->
   <?php endif; ?>
     <?php endif; ?>
   <?php endforeach; ?>
-</div>
+</div> <!--end sets-->
+
+<div id="decks" style="display:none">
+<?php if (Auth::check()): ?>
+  <button class="lb-link" func="/collection/<?=$collection->id?>/deck/new">
+    New Deck
+  </button>
+  <br><br><br>
+<?php endif ?>
+  <?php foreach ($decks as $deck): ?>
+    <div class="card card-portrait card-border card-border-radius10" style="border-color:#201F1C;background-color:#201F1C;">
+
+        <a href="/deck/<?=$deck->id?>">
+        <div class="card-background">
+
+        </div>
+        </a>
+
+        <a href="/deck/<?=$deck->id?>">
+          <div class="card-element position-midcenter card-background-white">
+            <?=$deck->name?>
+          </div>
+        </a>
+
+        <div class="card-element position-midlower card-background-transparent text-white text-border">
+          <?=$deck->description?>
+        </div>
+
+        <div class="card-element position-topmid text-white text-border">
+        <button>Set to Active</button>
+        </div>
+      </div> <!--end card-->
+  <?php endforeach ?>
+</div> <!--end decks-->
+
+</div> <!--end card-->
 
 <script src="{{ asset('js/search.js') }}"></script>
 @stop
