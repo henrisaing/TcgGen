@@ -60,6 +60,8 @@ Route::post('/deck/{deck}/add', 'DeckController@addCard');
 Route::post('/deck/{deck}/remove', 'DeckController@removeCard');
 Route::get('/deck/{deck}', 'DeckController@showDeck');
 Route::post('/deck/{deck}/activate', 'DeckController@activateDeck');
+Route::delete('/deck/{deck}/delete', 'DeckController@deleteDeck');
+Route::get('/deck/{deck}/delete', 'DeckController@deleteDeckForm');
 
 // session handling
 Route::post('/session', 'SessionController@theme');

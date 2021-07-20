@@ -26,7 +26,7 @@
 
         <?php if ($deck->user_id == Auth::id()): ?>
           <div class="card-element position-topmid text-white text-border">
-          <form action="/deck/<?=$deck->id?>/activate">
+          <form action="/deck/<?=$deck->id?>/activate" method="post">
             {{ csrf_field() }}
             <input type="submit" value="Set to Active ">
           </form>
@@ -38,6 +38,12 @@
             <button>View Deck</button>
           </a>
         </div>
+
+        <?php if ($deck->user_id == Auth::id()): ?>
+          <div class="card-element position-botleft text-white text-border">
+            <button class="lb-link" func="/deck/<?=$deck->id?>/delete">Delete</button>
+          </div>
+        <?php endif ?>
       </div> <!--end card-->
   <?php endforeach ?>
 </div> <!--end decks-->

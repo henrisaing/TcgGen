@@ -32,18 +32,18 @@ class Deck extends Model
 
   public function activate(){
     $thisDeck = $this;
-    $collection = $deck->collection()->first();
+    $collection = $thisDeck->collection()->first();
     $decks = $collection->decks()
       ->where('user_id', Auth::id())
       ->get();
 
     foreach ($decks as $deck):
       if ($deck->id == $thisDeck->id):
-      
+        $deck->active = true;
       else:
-
+        $deck->active = false;
       endif;
-      $deck->update();
+      $deck->save();
     endforeach;
 
     return $deck;

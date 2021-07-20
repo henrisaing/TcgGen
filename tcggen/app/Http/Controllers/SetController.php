@@ -16,7 +16,7 @@ class SetController extends Controller
     $sets = $collection->sets()->get();
     $auth = AuthCheck::collectPerms($collection);
     
-    $view = view('sets.index',[
+    $view = view('sets.list',[
       'collection' => $collection,
       'sets' => $sets,
       'auth' => $auth,

@@ -64,7 +64,33 @@ class DeckController extends Controller
   }
 
   public function activateDeck(Deck $deck){
+    $collection = $deck->collection()->first();
+    $deck->activate();
+    $view = redirect('/collection/'.$collection->id);
     
+    return $view;
+  }
+
+  public function deleteDeckForm(Deck $deck){
+    if ($deck->user_id == Auth::id()):
+      $view = view('decks.delete',[
+          'deck' => $deck,
+        ]);
+    else:
+      $view = "You do not have permission to delete this deck.";
+    endif;
+    return $view; 
+  }
+
+  public function deleteDeck(Deck $deck){
+    $collection = $deck->collection()->first();
+
+    if ($deck->user_id == Auth::id()):
+      $deck->delete();
+    endif;
+
+    $view = redirect('/collection/'.$collection->id);
+
     return $view;
   }
 }

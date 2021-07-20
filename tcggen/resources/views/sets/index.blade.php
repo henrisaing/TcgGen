@@ -1,16 +1,37 @@
-<!-- resource: sets.index -->
-<div class="overflow">
-<h3>Go To</h3>
-<?php foreach ($sets as $set): ?>  
+<div id="sets">
+<?php if ($auth['owner']): ?>
+  <button class="lb-link" func="/collection/<?=$collection->id?>/set/new">
+    New Set
+  </button>
+  <br>
+<?php endif ?>
+<br>
+<?php foreach ($sets as $set): ?>
   <?php if ($auth['owner'] || $set['public'] == 'public'): ?>
-    <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>" style="color:rgb(40,80,200);font-weight:400;">
-      <?php if ($set->name != ""): ?>
-        <?=$set->name?>
-      <?php else: ?>
-        Set <?=$set->id?>
-      <?php endif ?>
-    </a>
-    <br>
+    <div class="card card-portrait card-border card-border-radius10" style="border-color:#201F1C;background-color:#201F1C;">
+
+      <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>">
+      <div class="card-background">
+        <img src="<?=$set->image?>">
+      </div>
+      </a>
+
+      <a href="/collection/<?=$collection->id?>/set/<?=$set->id?>">
+        <div class="card-element position-midcenter card-background-white">
+          <?=$set->name?>
+        </div>
+      </a>
+
+      <div class="card-element position-midlower card-background-transparent text-white text-border">
+        <?=$set->description?>
+      </div>
+      <div class="card-element position-botmid">
+    <?php if ($auth['owner']): ?>
+      <button class="lb-link" func="/set/<?=$set->id?>/edit">edit</button>
+      <button class="lb-link" func="/set/<?=$set->id?>/delete">delete</button>
+    <?php endif ?>
+      </div>
+    </div> <!--end card-->
   <?php endif; ?>
 <?php endforeach; ?>
-</div>
+</div> <!--end sets-->

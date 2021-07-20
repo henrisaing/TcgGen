@@ -89,4 +89,13 @@ class Collection extends Model
 
     return $deck;
   }
+
+  public function activeDeck(){
+    $decks = $this->decks()
+      ->where('user_id', Auth::id())
+      ->get();
+    $active = $decks->where('active', 1)->first();
+
+    return $active;
+  }
 }

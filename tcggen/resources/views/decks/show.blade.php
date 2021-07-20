@@ -13,7 +13,7 @@
     <a class="lb-link" href="" func="/collection/<?=$collection->id?>/sets">  
       <strong> >> </strong>
     </a>
-
+    Decks >>
     <h2>
       <?php if (!(empty($deck->name))): ?>
         <?=$deck->name?>

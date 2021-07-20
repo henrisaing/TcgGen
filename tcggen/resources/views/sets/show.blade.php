@@ -27,6 +27,7 @@
       </h2>
   <input id="search" type="text" placeholder="Search">
 </nav>
+  @include('nav.active-deck')
   <?= $set->description; ?>
   <br>
 
