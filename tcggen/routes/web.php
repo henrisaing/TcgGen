@@ -59,6 +59,7 @@ Route::post('/collection/{collection}/deck/store', 'DeckController@storeDeck');
 Route::post('/deck/{deck}/add', 'DeckController@addCard');
 Route::post('/deck/{deck}/remove', 'DeckController@removeCard');
 Route::get('/deck/{deck}', 'DeckController@showDeck');
+Route::post('/deck/{deck}/activate', 'DeckController@activateDeck');
 
 // session handling
 Route::post('/session', 'SessionController@theme');

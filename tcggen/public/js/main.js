@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', (event)=>{
   if (document.body.contains(showSets)){
     showSets.addEventListener('click', event=>{
       event.preventDefault();
-      console.log('showsets');
       showSets.removeAttribute("href");
       showDecks.setAttribute('href', '');
       document.getElementById('sets').style.display = 'block';
@@ -67,14 +66,12 @@ document.addEventListener('DOMContentLoaded', (event)=>{
     card.addEventListener('mouseover', event=>{
       if(card.contains(card.querySelector('.overlay'))){
         card.querySelector('.overlay').style.display = "block";
-        console.log('mouseover');
       }
     });
   });
   cards.forEach(card => {
     card.addEventListener('mouseout', event=>{
       if(card.contains(card.querySelector('.overlay'))){
-        console.log('mouseout');
         card.querySelector('.overlay').style.display = "none";
       }
     });

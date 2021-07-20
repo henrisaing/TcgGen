@@ -62,4 +62,9 @@ class DeckController extends Controller
 
     return $view;
   }
+
+  public function activateDeck(Deck $deck){
+    
+    return $view;
+  }
 }

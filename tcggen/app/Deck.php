@@ -30,4 +30,22 @@ class Deck extends Model
     return $this->belongsTo(User::class);
   }
 
+  public function activate(){
+    $thisDeck = $this;
+    $collection = $deck->collection()->first();
+    $decks = $collection->decks()
+      ->where('user_id', Auth::id())
+      ->get();
+
+    foreach ($decks as $deck):
+      if ($deck->id == $thisDeck->id):
+      
+      else:
+
+      endif;
+      $deck->update();
+    endforeach;
+
+    return $deck;
+  }
 }

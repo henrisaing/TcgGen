@@ -81,8 +81,7 @@ right:0;
 */
 input[type=submit] , button{
   cursor: pointer;
-  background-color:none;
-  background:none;
+  background-color:white;
   border-radius:5px;
   border:1px solid black;
 }

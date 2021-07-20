@@ -17,22 +17,15 @@
   <input id="search" type="text" placeholder="Search">
 </nav>
 <?php print($collection->description) ?>
-
-<br>
-
-<?php if ($auth['owner']): ?>
-  <button class="lb-link" func="/collection/<?=$collection->id?>/set/new">
-    New Set
-  </button>
-<?php endif ?>
-<?php if (Auth::check()): ?>
-  <button class="lb-link" func="/collection/<?=$collection->id?>/deck/new">
-    New Deck
-  </button>
-<?php endif ?>
-<br><br>
 <div id="card-box">
   <div id="sets">
+  <?php if ($auth['owner']): ?>
+    <button class="lb-link" func="/collection/<?=$collection->id?>/set/new">
+      New Set
+    </button>
+    <br>
+  <?php endif ?>
+  <br>
   <?php foreach ($sets as $set): ?>
     <?php if ($auth['owner'] || $set['public'] == 'public'): ?>
       <div class="card card-portrait card-border card-border-radius10" style="border-color:#201F1C;background-color:#201F1C;">
@@ -63,11 +56,7 @@
   <?php endforeach; ?>
   </div> <!--end sets-->
 
-  <div id="decks" style="display:none">
-    <?php foreach ($decks as $deck): ?>
-      <?=$deck->name ?>
-    <?php endforeach ?>
-  </div> <!--end decks-->
+  @include('decks.index')
 
 </div> <!--end cardbox-->
 
