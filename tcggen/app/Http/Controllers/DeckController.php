@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Collection;
-use App\DeckcardController;
+use App\Deckcard;
 use App\AuthCheck;
 use Auth;
 use App\Deck;
+use App\Card;
 
 class DeckController extends Controller
 {
@@ -93,4 +94,22 @@ class DeckController extends Controller
 
     return $view;
   }
+
+  // deckcard functions
+  public function addCard(Deck $deck, Card $card){
+    if($deck->user_id == Auth::id()):
+      $deck->deckcards()->create([
+        'card_id' => $card->id,
+        'order' => 1,
+      ]);
+    endif;
+    return 1;
+  }
+
+  public function removeCard(Deck $deck, Deckcard $deckcard){
+    if($deck->user_id == Auth::id()):
+      $deckcard->delete();
+    endif;
+  }
+
 }

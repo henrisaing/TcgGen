@@ -8,6 +8,7 @@ use App\Set;
 use App\Collection;
 use Auth;
 use App\AuthCheck;
+use App\Deckcard;
 
 class CardController extends Controller
 {
@@ -101,6 +102,7 @@ class CardController extends Controller
     $collection = $set->collection()->first();
 
     if(AuthCheck::collectPerms($collection)['owner']):
+      Deckcard::where('card_id', $card->id)->delete();
       $card->delete();
     endif;
 

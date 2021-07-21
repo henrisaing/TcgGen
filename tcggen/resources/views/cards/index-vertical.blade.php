@@ -124,9 +124,13 @@
       </div>
 
       <div class="overlay" style="display:none">
-        <a class="ajaxPost" func="">
-          Add to [active] deck.
-        </a>
+        <?php if (Auth::check()): ?>
+          <?php if ($collection->activeDeck()): ?>
+          <a class="ajaxPost" func="/deck/<?=$collection->activeDeck()->id?>/<?=$card->id?>/add">Add to 
+            [<?=$collection->activeDeck()->name?>]
+          </a>
+          <?php endif; ?>
+        <?php endif ?>
         <br><br><br>
         <a href="/card/<?=$card->id?>">
           View Card

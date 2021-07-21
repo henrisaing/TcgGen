@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event)=>{
   const lbLinks = document.querySelectorAll('button.lb-link');
   const lbAnchor = document.querySelectorAll('a.lb-link');
+  const ajaxPost = document.querySelectorAll('.ajaxPost');
 
   // lightbox-link button clicks
   // gets contents of 'func' url
@@ -16,6 +17,13 @@ document.addEventListener('DOMContentLoaded', (event)=>{
     anchor.addEventListener('click', event=>{
       event.preventDefault();
       openLightbox(anchor.getAttribute('func'));
+    });
+  });
+
+  // for adding/removing cards to a deck
+  ajaxPost.forEach(anchor => {
+    anchor.addEventListener('click', event=>{
+      ajaxGetEmpty(anchor.getAttribute('func'));
     });
   });
 
@@ -90,4 +98,11 @@ function openLightbox(func){
         document.getElementById('light-box-content').innerHTML = data;
       });
   document.getElementById('dark-box').style.display = "block";
+}
+
+// just does an ajax call to hit server
+function ajaxGetEmpty(func){
+  $.get(func, function(){
+    console.log(func);
+  });
 }
