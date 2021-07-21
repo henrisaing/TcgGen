@@ -307,7 +307,7 @@ html::-webkit-scrollbar-thumb:active,.overflow::-webkit-scrollbar-thumb:active {
 a.lb-link:hover{
   cursor:pointer;
 }
-nav a:hover, .overflow a:hover{
+nav a:hover, .overflow a:hover, a:hover{
   text-decoration:underline;
 }
 /*END MISC*/
@@ -335,6 +335,7 @@ nav a:hover, .overflow a:hover{
 }
 @keyframes fade-up{
   0%    {top:0px;opacity:1;}
+  20%   {top:40px;opacity:1;}
   100%  {top:-100px;opacity:0;}
 }
 div.animate {

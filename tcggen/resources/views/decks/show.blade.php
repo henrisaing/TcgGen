@@ -23,8 +23,8 @@
       </h2>
   <input id="search" type="text" placeholder="Search">
 </nav>
-<?= $deck->description; ?>
-<br>
+<?= $deck->description; ?> <br>
+Deck Size: <?= $deckcards->count()?>
 
 <br><br>
 
