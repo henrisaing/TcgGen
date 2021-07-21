@@ -1,4 +1,4 @@
-<!-- resource view: sets.new -->
+<!-- resource view: sets.edit -->
 <div id="popup-form">
 <form action="/set/<?=$set->id?>/update" method="post">
 {{ csrf_field() }}

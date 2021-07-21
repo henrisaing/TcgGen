@@ -15,8 +15,8 @@ input[type=submit] , button{
   color:white;
 }
 
-a{
-  /*color:rgb(200,150,200);*/
+a[href]{
+  color:#194C4C;
 }
 
 h2{

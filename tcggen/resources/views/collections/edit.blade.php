@@ -2,7 +2,7 @@
 <!-- view requires $auth && $collection -->
 <div id="popup-form">
 <?php if ($auth['owner']): ?>
-  <!-- MVOE AUTH TO CONTROLLER? -->
+  <!-- MOVE AUTH TO CONTROLLER? -->
 <form action="/collection/<?=$collection->id?>/update" method="post">
 {{ csrf_field() }}
 

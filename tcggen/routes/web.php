@@ -60,6 +60,8 @@ Route::get('/deck/{deck}', 'DeckController@showDeck');
 Route::post('/deck/{deck}/activate', 'DeckController@activateDeck');
 Route::delete('/deck/{deck}/delete', 'DeckController@deleteDeck');
 Route::get('/deck/{deck}/delete', 'DeckController@deleteDeckForm');
+Route::get('/deck/{deck}/edit', 'DeckController@editDeck');
+Route::post('/deck/{deck}/update', 'DeckController@updateDeck');
 
 // deckcards
 Route::get('/deck/{deck}/{card}/add', 'DeckController@addCard');

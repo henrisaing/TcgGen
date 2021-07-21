@@ -95,6 +95,48 @@ class DeckController extends Controller
     return $view;
   }
 
+  public function editDeck(Deck $deck){
+    $collection = $deck->collection()->first();
+    $auth = AuthCheck::collectPerms($collection);
+
+    if($deck->user_id == Auth::id()):
+      $view = view('decks.edit', [
+        'deck' => $deck,
+        'auth' => $auth,
+      ]);
+    else:
+      $view = "You do not have permission to edit this deck.";
+    endif;
+
+    return $view;
+  }
+
+  public function updateDeck(Deck $deck, Request $request){
+    $collection = $deck->collection()->first();
+    $auth = AuthCheck::collectPerms($collection);
+    $public = $request->public;
+    
+    if ($auth['owner']):
+      $public = $request->public;
+    elseif($auth['owner'] == false && $public == 'public'):
+      $public = 'private';
+    endif;
+
+    if($deck->user_id == Auth::id()):
+      $view = redirect('/collection/'.$collection->id);
+      $deck->update([
+          'name' => $request->name,
+          'description' => $request->description,
+          'public' => $public,
+        ]);
+    else:
+      $msg = "You do not have permission to edit this deck.";
+      $view = view('errors.error', ['errorMsg' => $msg]);
+    endif;
+
+    return $view;
+  }
+
   // deckcard functions
   public function addCard(Deck $deck, Card $card){
     if($deck->user_id == Auth::id()):
@@ -103,7 +145,6 @@ class DeckController extends Controller
         'order' => 1,
       ]);
     endif;
-    return 1;
   }
 
   public function removeCard(Deck $deck, Deckcard $deckcard){

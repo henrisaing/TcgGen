@@ -12,7 +12,9 @@
 
         <a href="/deck/<?=$deck->id?>">
         <div class="card-background">
-
+          <?php if ($deck->deckcards()->count() > 0): ?>
+            <?=$deck->deckcards()->first()->card()->first()['card-background']?>
+          <?php endif ?>
         </div>
         </a>
 
@@ -44,6 +46,10 @@
         <?php if ($deck->user_id == Auth::id()): ?>
           <div class="card-element position-botleft text-white text-border">
             <button class="lb-link" func="/deck/<?=$deck->id?>/delete">Delete</button>
+          </div>
+
+          <div class="card-element position-botright text-white text-border">
+            <button class="lb-link" func="/deck/<?=$deck->id?>/edit">Edit</button>
           </div>
         <?php endif ?>
       </div> <!--end card-->
@@ -57,7 +63,9 @@
 
         <a href="/deck/<?=$deck->id?>">
         <div class="card-background">
-
+          <?php if ($deck->deckcards()->count() > 0): ?>
+            <?=$deck->deckcards()->first()->card()->first()['card-background']?>
+          <?php endif ?>
         </div>
         </a>
 
@@ -85,12 +93,6 @@
             <button>View Deck</button>
           </a>
         </div>
-
-        <?php if ($deck->user_id == Auth::id()): ?>
-          <div class="card-element position-botleft text-white text-border">
-            <button class="lb-link" func="/deck/<?=$deck->id?>/delete">Delete</button>
-          </div>
-        <?php endif ?>
       </div> <!--end card-->
       <?php endif ?>
   <?php endforeach ?>
