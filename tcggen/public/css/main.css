@@ -333,11 +333,15 @@ nav a:hover, .overflow a:hover{
         opacity   : 1;
     }
 }
+@keyframes fade-up{
+  0%    {top:0px;opacity:1;}
+  100%  {top:-100px;opacity:0;}
+}
 div.animate {
-    -webkit-animation : pulse 0.75s 1;
-    -moz-animation    : pulse 0.75s 1;
-    -o-animation      : pulse 0.75s 1;
-    animation         : pulse 0.75s 1;
+    -webkit-animation : fade-up 0.5s 1;
+    -moz-animation    : fade-up 0.5s 1;
+    -o-animation      : fade-up 0.5s 1;
+    animation         : fade-up 0.5s 1;
 }
 /*end anime*/
 /*

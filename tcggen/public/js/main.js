@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', (event)=>{
       anchor.parentNode.parentNode.classList.add('animate');
       setTimeout(function(){
        anchor.parentNode.parentNode.classList.remove('animate'); 
-      }, 750);
+      }, 500);
       
     });
   });
