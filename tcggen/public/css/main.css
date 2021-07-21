@@ -314,6 +314,35 @@ nav a:hover, .overflow a:hover{
 /*
 */
 
+/*animations*/
+/*
+*/
+
+/*from https://webplatform.github.io/docs/tutorials/css_animations/*/
+@keyframes pulse {
+    from {
+        transform : scale(1);
+        opacity   : 1;
+    }
+    50% {
+        transform : scale(0.75);
+        opacity   : 0.25;
+    }
+    to {
+        transform : scale(1);
+        opacity   : 1;
+    }
+}
+div.animate {
+    -webkit-animation : pulse 0.75s 1;
+    -moz-animation    : pulse 0.75s 1;
+    -o-animation      : pulse 0.75s 1;
+    animation         : pulse 0.75s 1;
+}
+/*end anime*/
+/*
+*/
+
 /*screen and low resolution*/
 /*
 */

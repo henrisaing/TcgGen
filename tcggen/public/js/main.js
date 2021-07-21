@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', (event)=>{
   ajaxPost.forEach(anchor => {
     anchor.addEventListener('click', event=>{
       ajaxGetEmpty(anchor.getAttribute('func'));
+
+      // animate, wait 0.75s, remove animation
+      anchor.parentNode.parentNode.classList.add('animate');
+      setTimeout(function(){
+       anchor.parentNode.parentNode.classList.remove('animate'); 
+      }, 750);
+      
     });
   });
 

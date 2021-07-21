@@ -30,11 +30,6 @@
 
 <div id="card-box">
   <?php foreach ($deckcards as $deckcard): ?>
-    <a href="" class="ajaxPost" func="/deck/<?=$deck->id?>/<?=$deckcard->id?>/remove">
-      <?=$deckcard->card()->first()->name  ?>
-
-    </a>
-
     <!-- card -->
     <div class="card card-portrait card-background-white card-border card-border-radius10 text-white text-border" style="border-color:<?=$deckcard->card()->first()['card-border']?>;background-color:<?=$deckcard->card()->first()['card-border']?>">
 
