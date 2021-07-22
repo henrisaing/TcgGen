@@ -23,14 +23,23 @@ document.addEventListener('DOMContentLoaded', (event)=>{
   // for adding/removing cards to a deck
   ajaxPost.forEach(anchor => {
     anchor.addEventListener('click', event=>{
-      ajaxGetEmpty(anchor.getAttribute('func'));
-
+      var func = anchor.getAttribute('func');
+      // var count = ajaxGetEmpty(anchor.getAttribute('func'));
+      $.get(func, function(data){
+        document.getElementById('count').innerHTML = data;
+      });
       // animate, wait 0.75s, remove animation
       anchor.parentNode.parentNode.classList.add('animate');
-      setTimeout(function(){
-       anchor.parentNode.parentNode.classList.remove('animate'); 
-      }, 500);
       
+      if(func.split("/").pop() == 'remove'){
+        setTimeout(function(){
+          anchor.parentNode.parentNode.remove();
+        }, 500);
+      }else if(func.split("/").pop() == 'add'){
+        setTimeout(function(){
+          anchor.parentNode.parentNode.classList.remove('animate'); 
+        }, 500);
+      }
     });
   });
 
@@ -109,7 +118,12 @@ function openLightbox(func){
 
 // just does an ajax call to hit server
 function ajaxGetEmpty(func){
-  $.get(func, function(){
-    console.log(func);
+  var count;
+  $.get(func, function(data){
+    console.log('data:'+data);
+    count = parseInt(data);
+    
   });
+  console.log('count:'+count)
+  return count;
 }

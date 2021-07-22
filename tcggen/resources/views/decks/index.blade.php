@@ -30,10 +30,7 @@
 
         <?php if ($deck->user_id == Auth::id()): ?>
           <div class="card-element position-topmid text-white text-border">
-          <form action="/deck/<?=$deck->id?>/activate" method="post">
-            {{ csrf_field() }}
-            <input type="submit" value="Set to Active ">
-          </form>
+          <a href="" class="ajaxPost" func="/deck/<?=$deck->id?>/activate"><button>Set to Active</button></a>
         </div>
         <?php endif ?>
         
@@ -81,10 +78,7 @@
 
         <?php if ($deck->user_id == Auth::id()): ?>
           <div class="card-element position-topmid text-white text-border">
-          <form action="/deck/<?=$deck->id?>/activate" method="post">
-            {{ csrf_field() }}
-            <input type="submit" value="Set to Active ">
-          </form>
+          <a href="" class="ajaxPost" func="/deck/<?=$deck->id?>/activate"><button>Set to Active</button></a>
         </div>
         <?php endif ?>
         

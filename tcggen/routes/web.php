@@ -57,7 +57,7 @@ Route::get('/collection/{collection}/decks', 'DeckController@decks');
 Route::get('/collection/{collection}/deck/new', 'DeckController@newDeck');
 Route::post('/collection/{collection}/deck/store', 'DeckController@storeDeck');
 Route::get('/deck/{deck}', 'DeckController@showDeck');
-Route::post('/deck/{deck}/activate', 'DeckController@activateDeck');
+Route::get('/deck/{deck}/activate', 'DeckController@activateDeck');
 Route::delete('/deck/{deck}/delete', 'DeckController@deleteDeck');
 Route::get('/deck/{deck}/delete', 'DeckController@deleteDeckForm');
 Route::get('/deck/{deck}/edit', 'DeckController@editDeck');

@@ -24,14 +24,14 @@
   <input id="search" type="text" placeholder="Search">
 </nav>
 <?= $deck->description; ?> <br>
-Deck Size: <?= $deckcards->count()?>
+Deck Size: <span id="count"><?= $deckcards->count()?></span>
 
 <br><br>
 
 <div id="card-box">
   <?php foreach ($deckcards as $deckcard): ?>
     <!-- card -->
-    <div class="card card-portrait card-background-white card-border card-border-radius10 text-white text-border" style="border-color:<?=$deckcard->card()->first()['card-border']?>;background-color:<?=$deckcard->card()->first()['card-border']?>">
+    <div class="card card-portrait card-border card-border-radius10 text-white text-border" style="border-color:<?=$deckcard->card()->first()['card-border']?>;background-color:<?=$deckcard->card()->first()['card-border']?>">
 
       <div class="card-element card-background" element="card-background">
         <?php if (str_contains($deckcard->card()->first()['card-background'], "[IMG]")): ?>
@@ -137,10 +137,11 @@ Deck Size: <?= $deckcards->count()?>
         <?php endif; ?>
       </div>
 
-      <div class="overlay" style="display:none">
+      <div class="overlay" style="display:none;">
+        
         <?php if ($deck->user_id == Auth::id()): ?>
           <?php if ($collection->activeDeck()): ?>
-          <a href="" class="ajaxPost" func="/deck/<?=$deck->id?>/<?=$deckcard->id?>/remove">Remove from  
+          <a class="ajaxPost" func="/deck/<?=$deck->id?>/<?=$deckcard->id?>/remove">Remove from  
             [<?=$collection->activeDeck()->name?>]
           </a>
           <?php endif; ?>
@@ -149,7 +150,8 @@ Deck Size: <?= $deckcards->count()?>
         <a href="/card/<?=$deckcard->card()->first()->id?>">
           View Card
         </a>
-      </div>
+        <!-- </div>end overlay-content -->
+      </div><!--end overlay-->
     </div> <!-- end card -->
 
   <?php endforeach ?>

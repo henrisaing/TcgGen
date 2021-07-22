@@ -41,6 +41,7 @@ class DeckController extends Controller
     if (Auth::check()):
       $deck = $collection->createDeck($collection, $request);
       $view = redirect('/collection/'.$collection->id);
+      $deck->activate();
     else:
       $msg = "You must be logged in to create a deck.";
       $view = view('errors.error', ['errorMsg' => $msg]);
@@ -67,9 +68,9 @@ class DeckController extends Controller
   public function activateDeck(Deck $deck){
     $collection = $deck->collection()->first();
     $deck->activate();
-    $view = redirect('/collection/'.$collection->id);
+    // $view = redirect('/collection/'.$collection->id);
     
-    return $view;
+    // return $view;
   }
 
   public function deleteDeckForm(Deck $deck){
@@ -145,12 +146,16 @@ class DeckController extends Controller
         'order' => 1,
       ]);
     endif;
+
+    return $deck->deckcards()->get()->count();
   }
 
   public function removeCard(Deck $deck, Deckcard $deckcard){
     if($deck->user_id == Auth::id()):
       $deckcard->delete();
     endif;
+
+    return $deck->deckcards()->get()->count();
   }
 
 }
