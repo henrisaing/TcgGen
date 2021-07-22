@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection as CollectionObj;
 use App\Collection;
 use App\Deckcard;
 use App\AuthCheck;
@@ -54,7 +55,7 @@ class DeckController extends Controller
     if($deck->user_id == Auth::id() || $deck->public == 'public' || $deck->public == 'shareable'):
       $view = view('decks.show',[
           'deck' => $deck,
-          'deckcards' => $deck->deckcards()->get(),
+          'deckcards' => $deck->deckcards()->orderBy('card_id')->get(),
           'collection' => $deck->collection()->first(),
         ]);
     else:
@@ -68,9 +69,6 @@ class DeckController extends Controller
   public function activateDeck(Deck $deck){
     $collection = $deck->collection()->first();
     $deck->activate();
-    // $view = redirect('/collection/'.$collection->id);
-    
-    // return $view;
   }
 
   public function deleteDeckForm(Deck $deck){
