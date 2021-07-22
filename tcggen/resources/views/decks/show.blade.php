@@ -140,11 +140,9 @@ Deck Size: <span id="count"><?= $deckcards->count()?></span>
       <div class="overlay" style="display:none;">
         
         <?php if ($deck->user_id == Auth::id()): ?>
-          <?php if ($collection->activeDeck()): ?>
           <a class="ajaxPost" func="/deck/<?=$deck->id?>/<?=$deckcard->id?>/remove">Remove from  
-            [<?=$collection->activeDeck()->name?>]
+            [<?=$deck->name?>]
           </a>
-          <?php endif; ?>
         <?php endif ?>
         <br><br><br>
         <a href="/card/<?=$deckcard->card()->first()->id?>">
