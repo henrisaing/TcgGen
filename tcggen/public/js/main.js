@@ -104,7 +104,12 @@ document.addEventListener('DOMContentLoaded', (event)=>{
 });
 
 function closeLightbox(){
-  document.getElementById('dark-box').style.display = "none";
+  document.getElementById('dark-box').classList.add('fade-out');
+  setTimeout(function(){
+    document.getElementById('dark-box').classList.remove('fade-out');
+    document.getElementById('dark-box').style.display = "none";
+  }, 1000);
+  
 }
 
 // opens link content in lightbox instead of window/tab
@@ -114,6 +119,11 @@ function openLightbox(func){
         document.getElementById('light-box-content').innerHTML = data;
       });
   document.getElementById('dark-box').style.display = "block";
+  document.getElementById('light-box').classList.add('fade-in');
+  setTimeout(function(){
+    document.getElementById('light-box').classList.remove('fade-in');
+  }, 1000);
+
 }
 
 // just does an ajax call to hit server
