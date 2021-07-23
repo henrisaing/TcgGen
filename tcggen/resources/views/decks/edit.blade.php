@@ -32,6 +32,6 @@
   >shareable</label> 
   
   <br>
-  <input type="submit" value="Update Set">
+  <input type="submit" value="Update Deck">
 </form>
 </div>

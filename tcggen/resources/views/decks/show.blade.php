@@ -25,7 +25,12 @@
 </nav>
 <?= $deck->description; ?> <br>
 Deck Size: <span id="count"><?= $deckcards->count()?></span>
-
+<?php if ($deck->user_id == Auth::id()): ?>
+  <br>
+  <button class="lb-link" func="/deck/<?=$deck->id?>/edit">Edit</button>
+  <a href="" class="ajaxPost" func="/deck/<?=$deck->id?>/activate"><button>Set to Active</button></a>
+  <button class="lb-link" func="/deck/<?=$deck->id?>/delete">Delete</button>
+<?php endif ?>
 <br><br>
 
 <div id="card-box">

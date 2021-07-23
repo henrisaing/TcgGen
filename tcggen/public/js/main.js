@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', (event)=>{
 function closeLightbox(){
   document.getElementById('dark-box').classList.add('fade-out');
   setTimeout(function(){
+    document.getElementById('light-box-content').innerHTML ="";
     document.getElementById('dark-box').classList.remove('fade-out');
     document.getElementById('dark-box').style.display = "none";
   }, 1000);
