@@ -8,8 +8,7 @@ body{
 
 input[type=submit] , button{
   cursor: pointer;
-  background-color:none;
-  background:none;
+  background-color:black;
   border-radius:5px;
   border:1px solid white;
   color:white;
@@ -45,10 +44,10 @@ input#search{
   border-color:black;
 }
 
-.card button{
-  border-color:black;
-  color:black;
-}
+/*.card button{
+  border-color:white;
+  color:white;
+}*/
 
 /*SCROLLBAR*/
 /*

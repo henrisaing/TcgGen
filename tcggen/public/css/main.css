@@ -84,6 +84,7 @@ input[type=submit] , button{
   background-color:white;
   border-radius:5px;
   border:1px solid black;
+  color:black;
 }
 
 input, textarea{
@@ -319,6 +320,10 @@ nav a:hover, .overflow a:hover, a:hover{
   text-decoration:underline;
 }
 /*END MISC*/
+/*
+*/
+
+/*end links*/
 /*
 */
 

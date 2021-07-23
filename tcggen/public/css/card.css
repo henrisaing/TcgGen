@@ -131,9 +131,9 @@ input{
 
 
 /*misc*/
-.card button, .card input[type=submit]{
+/*.card button, .card input[type=submit]{
   background-color:rgba(250,250,250,0.5);
-}
+}*/
 
 .card a{
   font-size:1.2em;
