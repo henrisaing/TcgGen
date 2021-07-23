@@ -3,7 +3,7 @@
     {{csrf_field()}}
     {{method_field('delete')}}
       Are you sure you want to delete [<?=$deck->name?>]?
-    <br><br>
+    <br><br><br><br><br><br>
     <button type="submit">DELETE</button>
   </form>
 </div>

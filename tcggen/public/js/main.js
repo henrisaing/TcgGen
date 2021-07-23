@@ -109,7 +109,7 @@ function closeLightbox(){
     document.getElementById('light-box-content').innerHTML ="";
     document.getElementById('dark-box').classList.remove('fade-out');
     document.getElementById('dark-box').style.display = "none";
-  }, 1000);
+  }, 900);
   
 }
 
