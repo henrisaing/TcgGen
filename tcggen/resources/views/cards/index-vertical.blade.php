@@ -127,7 +127,7 @@
         <?php if (Auth::check()): ?>
           <?php if ($collection->activeDeck()): ?>
           <a class="ajaxPost" func="/deck/<?=$collection->activeDeck()->id?>/<?=$card->id?>/add">Add to 
-            [<?=$collection->activeDeck()->name?>]
+            [Active Deck]
           </a>
           <?php endif; ?>
         <?php endif ?>

@@ -146,7 +146,7 @@ Deck Size: <span id="count"><?= $deckcards->count()?></span>
         
         <?php if ($deck->user_id == Auth::id()): ?>
           <a class="ajaxPost" func="/deck/<?=$deck->id?>/<?=$deckcard->id?>/remove">Remove from  
-            [<?=$deck->name?>]
+            [deck]
           </a>
         <?php endif ?>
         <br><br><br>
