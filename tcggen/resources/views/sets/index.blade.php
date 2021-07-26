@@ -22,7 +22,7 @@
         </div>
       </a>
 
-      <div class="card-element position-midlower card-background-transparent text-white text-border overflow">
+      <div class="card-element position-midlower card-background-transparent text-white text-border" style="overflow:auto">
         <?=$set->description?>
       </div>
       <div class="card-element position-botmid">
