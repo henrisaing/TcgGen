@@ -110,7 +110,7 @@
   </div>
   <button id="decrease-font-size">-</button>
   <button id="increase-font-size">+</button>
-  
+
   <div class="card-element card-background-transparent 
               position-midleft hotswaptext" element="midleft">
     <?php if ($template['hasTemplate'] && !empty($template['template']['midleft'])): ?>
@@ -252,6 +252,7 @@
           var current = $('.position-midlower').find('span').css('font-size').replace('px','');
           $('.position-midlower').find('span').css('font-size', (parseInt(current)+parseInt(change))+'px');
         }
+      }
     </script>
 
 @stop
