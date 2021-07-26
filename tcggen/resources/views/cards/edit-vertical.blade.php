@@ -111,6 +111,9 @@
           <?= $card['midlower']; ?>
         <?php endif; ?>
       </div>
+      <button id="decrease-font-size">-</button>
+      <button id="increase-font-size">+</button>
+
 
       <div class="card-element position-midleft hotswaptext card-background-transparent" element="midleft">
         <?php if (str_contains($card['midleft'],"[IMG]")): ?>
@@ -225,6 +228,28 @@
         $('#card-form').attr('action', '/card/<?=$card->id?>/applyall');
         $('#card-form').submit();
       });
+
+      $('#decrease-font-size').on('click', function(e){
+        fontSizeSpan(-1);
+      });
+      $('#increase-font-size').on('click', function(e){
+        fontSizeSpan(1);
+      });
+
+      function fontSizeSpan(change){
+        var span = $('.position-midlower').find('span');
+        
+        if(typeof span[0] !== 'undefined'){
+          var current = span.css('font-size').replace('px','');
+          span.css('font-size', (parseInt(current)+parseInt(change))+'px');
+          
+        }else{
+          var content = $('.position-midlower').html();
+          $('.position-midlower').html('<span style="font-size:1em">'+content.trim()+'</span>');
+          var current = $('.position-midlower').find('span').css('font-size').replace('px','');
+          $('.position-midlower').find('span').css('font-size', (parseInt(current)+parseInt(change))+'px');
+        }
+      }
     </script>
 
 @stop

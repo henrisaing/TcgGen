@@ -25,7 +25,7 @@
         </div>
       </a>
 
-      <div class="card-element position-midlower card-background-transparent text-white text-border">
+      <div class="card-element position-midlower card-background-transparent text-white text-border overflow">
         <?=$collection->description?>
       </div>
       <div class="card-element position-botmid">
