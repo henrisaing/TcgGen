@@ -101,7 +101,7 @@
   </div>
 
   <div class="card-element card-background-transparent-dark 
-              card-vertical-lower card-horizontal-mid hotswaptext" element="midlower">
+              position-midlower hotswaptext" element="midlower">
     <?php if ($template['hasTemplate'] && !empty($template['template']['midlower'])): ?>
       <?= $template['template']['midlower']; ?>
     <?php else: ?>
