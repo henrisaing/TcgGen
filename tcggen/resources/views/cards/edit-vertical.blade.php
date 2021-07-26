@@ -114,7 +114,6 @@
       <button id="decrease-font-size">-</button>
       <button id="increase-font-size">+</button>
 
-
       <div class="card-element position-midleft hotswaptext card-background-transparent" element="midleft">
         <?php if (str_contains($card['midleft'],"[IMG]")): ?>
           <img src="<?= str_replace('[IMG]', '', $card['midleft'])?>">
@@ -238,7 +237,7 @@
 
       function fontSizeSpan(change){
         var span = $('.position-midlower').find('span');
-        
+
         if(typeof span[0] !== 'undefined'){
           var current = span.css('font-size').replace('px','');
           span.css('font-size', (parseInt(current)+parseInt(change))+'px');
