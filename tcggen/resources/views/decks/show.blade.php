@@ -110,6 +110,7 @@ Deck Size: <span id="count"><?= $deckcards->count()?></span>
         <?php endif; ?>
       </div>
 
+      <?php if (!(preg_match("/\[HIDE\]/i",$deckcard->card()->first()['midlower']))): ?>
       <div class="card-element position-midlower card-background-transparent-dark" element="midlower">
         <?php if (str_contains($deckcard->card()->first()['midlower'],"[IMG]")): ?>
           <img src="<?= str_replace('[IMG]', '', $deckcard->card()->first()['midlower'])?>">
@@ -117,7 +118,8 @@ Deck Size: <span id="count"><?= $deckcards->count()?></span>
           <?= $deckcard->card()->first()['midlower']; ?>
         <?php endif; ?>
       </div>
-
+      <?php endif; ?>
+      
       <div class="card-element position-midleft" element="midleft">
         <?php if (str_contains($deckcard->card()->first()['midleft'],"[IMG]")): ?>
           <img src="<?= str_replace('[IMG]', '', $deckcard->card()->first()['midleft'])?>">
