@@ -91,6 +91,7 @@
         <?php endif; ?>
       </div>
 
+      <?php if (!(preg_match("/\[HIDE\]/i",$card['midlower']))): ?>
       <div class="card-element position-midlower card-background-transparent-dark" element="midlower">
         <?php if (str_contains($card['midlower'],"[IMG]")): ?>
           <img src="<?= str_replace('[IMG]', '', $card['midlower'])?>">
@@ -98,6 +99,7 @@
           <?= $card['midlower']; ?>
         <?php endif; ?>
       </div>
+      <?php endif; ?>
 
       <div class="card-element position-midleft" element="midleft">
         <?php if (str_contains($card['midleft'],"[IMG]")): ?>
