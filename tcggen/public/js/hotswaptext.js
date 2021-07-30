@@ -48,7 +48,7 @@ $(document).ready(function(){
 function lineCount(string){
   var lines = string.replace(/\&nbsp\;/g,'').split(/\r|\r\n|\n|\<br\>/);
   var totalLines = 1;
-  var lineLength = 20;
+  var lineLength = 19;
 
   if(lines.length > 1){
     lines.forEach(function(line){
