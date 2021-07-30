@@ -27,10 +27,12 @@
       </h2>
   <input id="search" type="text" placeholder="Search">
 </nav>
+  <div id="info">
   @include('nav.active-deck')
-  <?= $set->description; ?>
-  <br>
-
+    <?= $set->description; ?>
+    <br>
+  </div>
+  
   <div id="card-box">
   
   @include('cards.index-vertical')

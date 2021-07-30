@@ -1,16 +1,18 @@
 <div id="sets">
-  <?php if ($auth['owner']): ?>
-    <a href="/set/<?=$set->id?>/new" style="text-decoration:none;">
-      <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
-    </a>
-    <?php if ($template['hasTemplate']): ?>
-        <a href="/card/<?=$template['template']->id?>">
-          <button>Template</button>
-        </a><br>
+  <div id="print-hide">
+    <?php if ($auth['owner']): ?>
+      <a href="/set/<?=$set->id?>/new" style="text-decoration:none;">
+        <button class="_lb-link" _func="/set/<?=$set->id?>/new">New Card</button>
+      </a>
+      <?php if ($template['hasTemplate']): ?>
+          <a href="/card/<?=$template['template']->id?>">
+            <button>Template</button>
+          </a><br>
+      <?php endif ?>
     <?php endif ?>
-  <?php endif ?>
 
-  <br><br>
+    <br><br>
+  </div> <!--end print-hide-->
   <?php foreach ($cards as $card): ?>
     <?php if ($card->name != "[TEMPLATE]"): ?>
     <?php if ($auth['owner'] || $card->public == 'public'): ?>

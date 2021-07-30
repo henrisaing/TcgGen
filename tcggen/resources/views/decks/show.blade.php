@@ -23,6 +23,7 @@
       </h2>
   <input id="search" type="text" placeholder="Search">
 </nav>
+<div id="info">
 <?= $deck->description; ?> <br>
 Deck Size: <span id="count"><?= $deckcards->count()?></span>
 <?php if ($deck->user_id == Auth::id()): ?>
@@ -33,7 +34,7 @@ Deck Size: <span id="count"><?= $deckcards->count()?></span>
   <button class="lb-link" func="/deck/<?=$deck->id?>/delete">Delete</button>
 <?php endif ?>
 <br><br>
-
+</div>
 <div id="card-box">
   <?php foreach ($deckcards as $deckcard): ?>
     <!-- card -->
