@@ -45,8 +45,17 @@ $(document).ready(function(){
  });
 
 // counts lines to set textarea rows
+// counts single lines longer than line length as 2 lines 
 function lineCount(string){
-  var lines = string.split(/\r|\r\n|\n|\<br\>/);
-  var count = lines.length;
-  return count;
+  var lineLength = 19;
+  var lines = string.replace(/\&nbsp\;/g,'').split(/\r|\r\n|\n|\<br\>/);
+  var totalLines = 1;
+
+  if(lines.length > 1){
+    lines.forEach(function(line){
+      totalLines += (line.match(new RegExp('.{1,' + lineLength + '}', 'g'))).length;
+    });
+  }
+
+  return totalLines;
 }
