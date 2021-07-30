@@ -62,6 +62,8 @@ Route::delete('/deck/{deck}/delete', 'DeckController@deleteDeck');
 Route::get('/deck/{deck}/delete', 'DeckController@deleteDeckForm');
 Route::get('/deck/{deck}/edit', 'DeckController@editDeck');
 Route::post('/deck/{deck}/update', 'DeckController@updateDeck');
+Route::get('/deck/{deck}/clone', 'DeckController@cloneDeckForm');
+Route::post('/deck/{deck}/copy', 'DeckController@cloneDeck');
 
 // deckcards
 Route::get('/deck/{deck}/{card}/add', 'DeckController@addCard');

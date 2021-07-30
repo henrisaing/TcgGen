@@ -29,6 +29,7 @@ Deck Size: <span id="count"><?= $deckcards->count()?></span>
   <br>
   <button class="lb-link" func="/deck/<?=$deck->id?>/edit">Edit</button>
   <a href="" class="ajaxPost" func="/deck/<?=$deck->id?>/activate"><button>Set to Active</button></a>
+  <button class="lb-link" func="/deck/<?=$deck->id?>/clone">Clone</button>
   <button class="lb-link" func="/deck/<?=$deck->id?>/delete">Delete</button>
 <?php endif ?>
 <br><br>

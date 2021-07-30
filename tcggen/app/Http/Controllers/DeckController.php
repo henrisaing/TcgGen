@@ -136,6 +136,35 @@ class DeckController extends Controller
     return $view;
   }
 
+  public function cloneDeckForm(Deck $deck){
+    $collection = $deck->collection()->first();
+    $auth = AuthCheck::collectPerms($collection);
+
+    if(Auth::check() && $deck->public != 'private' || Auth::id() == $deck->user_id):
+      $view = view('decks.clone', [
+        'deck' => $deck,
+        'auth' => $auth,
+      ]);
+    else:
+      $view = "You do not have permission to clone.";
+    endif;
+
+    return $view;
+  }
+
+  public function cloneDeck(Deck $deck, Request $request){
+    $clone = $deck->clone($request);
+
+    if($clone === null):
+      $msg = "An error has occured trying to clone deck.";
+      $view = view('errors.error', ['errorMsg' => $msg]);
+    else:
+      $view = redirect('/deck/'.$clone->id);
+    endif;
+
+    return $view;
+  }
+
   // deckcard functions
   public function addCard(Deck $deck, Card $card){
     if($deck->user_id == Auth::id()):
