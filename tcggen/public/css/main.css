@@ -411,6 +411,7 @@ nav a:hover, .overflow a:hover, a:hover{
     width: 215.9mm;
     height: 279.4mm;
     position:relative;
+    background-color:white !important;
   }
   #card-box{
     width: 215.9mm;
