@@ -66,9 +66,12 @@ Route::get('/deck/{deck}/clone', 'DeckController@cloneDeckForm');
 Route::post('/deck/{deck}/copy', 'DeckController@cloneDeck');
 Route::get('/deck/{deck}/api', 'DeckController@apiDeck');
 
+
 // deckcards
 Route::get('/deck/{deck}/{card}/add', 'DeckController@addCard');
 Route::get('/deck/{deck}/{deckcard}/remove', 'DeckController@removeCard');
 
 // session handling
 Route::post('/session', 'SessionController@theme');
+
+

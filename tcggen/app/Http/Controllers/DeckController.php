@@ -10,6 +10,7 @@ use App\AuthCheck;
 use Auth;
 use App\Deck;
 use App\Card;
+use Closure;
 
 class DeckController extends Controller
 {
@@ -53,13 +54,16 @@ class DeckController extends Controller
 
   public function apiDeck(Deck $deck){
     if($deck->public == 'public' || $deck->public == 'shareable'):
-      $response = response()->json([
+      $response = response()
+      ->json([
         'name' => $deck->name,
         'cards' => view('decks.api',[
           'deck' => $deck,
           'deckcards' => $deck->deckcards()->orderBy('card_id')->get()
         ])->render(),
-      ], 200);
+      ], 200)
+      ->header('Access-Control-Allow-Origin', '*')
+      ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     else:
       $response = response()->json([
         'error' => 'Resource not found.'
