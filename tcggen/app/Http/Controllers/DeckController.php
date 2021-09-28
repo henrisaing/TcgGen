@@ -51,6 +51,24 @@ class DeckController extends Controller
     return $view;
   }
 
+  public function apiDeck(Deck $deck){
+    if($deck->public == 'public' || $deck->public == 'shareable'):
+      $response = response()->json([
+        'name' => $deck->name,
+        'cards' => view('decks.api',[
+          'deck' => $deck,
+          'deckcards' => $deck->deckcards()->orderBy('card_id')->get()
+        ])->render(),
+      ], 200);
+    else:
+      $response = response()->json([
+        'error' => 'Resource not found.'
+      ], 404);
+    endif;
+
+    return $response;
+  }
+
   public function showDeck(Deck $deck){
     if($deck->user_id == Auth::id() || $deck->public == 'public' || $deck->public == 'shareable'):
       $view = view('decks.show',[
