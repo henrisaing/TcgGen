@@ -101,14 +101,6 @@
         <?php endif; ?>
       </div>
 
-      <!-- <div class="card-element position-midupper" element="midupper"> -->
-        <?php// if (str_contains($deckcard->card()->first()['midupper'],"[IMG]")): ?>
-          <!-- <img src="<?=// str_replace('[IMG]', '', $deckcard->card()->first()['midupper'])?>"> -->
-        <?php// else: ?>
-          <?=// $deckcard->card()->first()['midupper']; ?>
-        <?php// endif; ?>
-      <!-- </div> -->
-
       <div class="overlay" style="display:none;">
         
         <?php if ($deck->user_id == Auth::id()): ?>
